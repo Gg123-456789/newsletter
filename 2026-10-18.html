@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI助手 · 行业日报 | 2026年10月18日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#4361ee; --primary-light:#eef2ff;
+    --bg:#f4f6f9; --card-bg:#ffffff;
+    --text-main:#1f2937; --text-sub:#6b7280; --text-light:#9ca3af;
+    --insight-bg:#f8fafc; --insight-border:#e2e8f0;
+    --impact-bg:#fff7ed; --impact-text:#c2410c;
+    --hot:#D64545; --line:#e5e7eb;
+    --radius:12px;
+    --shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03);
+    --shadow-hover:0 10px 15px -3px rgba(0,0,0,.08), 0 4px 6px -2px rgba(0,0,0,.04);
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background-color:var(--bg); color:var(--text-main);
+    line-height:1.6; padding-bottom:40px; -webkit-font-smoothing:antialiased;
+  }
+
+  /* Header */
+  header{
+    text-align:center; padding:40px 20px;
+    background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%);
+    color:#fff; border-radius:0 0 24px 24px; margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(67,97,238,.3);
+  }
+  header h1{font-size:28px; font-weight:900; margin-bottom:8px; letter-spacing:1px;}
+  header .date{font-size:16px; opacity:.9; font-weight:500;}
+  header .window{
+    display:inline-block; margin-top:10px; padding:3px 12px;
+    font-size:12.5px; opacity:.9; border-radius:999px; background:rgba(255,255,255,.16);
+  }
+
+  .container{max-width:800px; margin:0 auto; padding:20px;}
+
+  /* Category Title */
+  .category-title{
+    display:flex; align-items:center; margin:40px 0 20px;
+    font-size:20px; font-weight:800; color:var(--text-main);
+  }
+  .category-title::before{
+    content:""; display:block; width:6px; height:24px;
+    background-color:var(--primary); border-radius:3px; margin-right:12px;
+  }
+  .category-title .en{
+    margin-left:auto; font-size:13px; color:var(--text-light);
+    font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  }
+
+  /* News Card */
+  .news-card{
+    background:var(--card-bg); border-radius:var(--radius);
+    padding:24px; margin-bottom:20px; box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid rgba(0,0,0,.02); position:relative; overflow:hidden;
+  }
+  .news-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-hover);}
+
+  .card-header{display:flex; align-items:flex-start; margin-bottom:12px;}
+  .number-badge{
+    background-color:var(--primary); color:#fff; width:28px; height:28px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:15px; flex-shrink:0; margin-right:12px; margin-top:2px;
+    box-shadow:0 2px 4px rgba(67,97,238,.3); font-variant-numeric:tabular-nums;
+  }
+  .news-title{font-size:17px; font-weight:700; line-height:1.4; color:var(--primary); flex:1;}
+
+  .news-meta{
+    font-size:13px; color:var(--text-light); margin-bottom:12px;
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  }
+  .source-tag{background-color:#f3f4f6; padding:2px 8px; border-radius:4px; font-size:12px;}
+
+  .card-eng{
+    display:flex; flex-wrap:wrap; gap:4px 14px; font-size:12.5px;
+    color:var(--text-light); margin:-4px 0 12px; font-variant-numeric:tabular-nums;
+  }
+  .card-eng span{white-space:nowrap;}
+
+  .news-summary{color:var(--text-sub); font-size:15px; margin-bottom:16px; text-align:justify;}
+
+  /* Insight & Impact */
+  .insight-box{
+    background-color:var(--insight-bg); border:1px solid var(--insight-border);
+    border-radius:8px; padding:12px 16px; margin-bottom:10px; font-size:14px;
+  }
+  .insight-label{font-weight:700; color:var(--text-main); margin-right:6px;}
+  .insight-text{color:var(--text-sub);}
+
+  .impact-box{
+    background-color:var(--impact-bg); border-radius:8px; padding:12px 16px;
+    font-size:14px; color:var(--impact-text); display:flex; align-items:flex-start;
+  }
+  .impact-icon{margin-right:8px; font-weight:700;}
+
+  .hl{color:#3a0ca3; font-weight:700; font-style:normal;}
+  .hl-hot{color:var(--hot); font-weight:700; font-style:normal;}
+
+  /* Link Button */
+  .read-more{
+    display:inline-flex; align-items:center; margin-top:16px;
+    color:var(--primary); text-decoration:none; font-size:14px; font-weight:600;
+    padding:6px 12px; border-radius:6px; background-color:var(--primary-light);
+    transition:background-color .2s;
+  }
+  .read-more:hover{background-color:#dbe4ff;}
+  .read-more::after{content:'→'; margin-left:6px; transition:transform .2s;}
+  .read-more:hover::after{transform:translateX(3px);}
+
+  /* Footer */
+  footer{
+    text-align:center; margin-top:50px; color:var(--text-light); font-size:13px;
+    border-top:1px solid var(--line); padding-top:30px;
+  }
+  .disclaimer{max-width:600px; margin:10px auto 0; font-size:12px; line-height:1.5; opacity:.8;}
+
+  @media (max-width:600px){
+    .container{padding:12px;}
+    header{padding:30px 15px; margin-bottom:20px;}
+    header h1{font-size:24px;}
+    .news-card{padding:20px;}
+    .news-summary{font-size:14.5px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI助手 · 行业日报</h1>
+  <div class="date">2026年10月18日 星期日</div>
+  
+</header>
+<div class="container">
+
+        <!-- 门窗幕墙 -->
+        <div class="category-title">
+            <span>门窗幕墙</span>
+            <span class="en">Doors, Windows &amp; Curtain Walls</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">1</div>
+                <div class="news-title"><em class="hl">新西兰</em>终止对进口<em class="hl">铝型材</em><em class="hl">保障措施</em>调查：认定造成损害但未达「严重损害」标准</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">世铝网·有色金属一周要闻</span><span>2026-10-13</span></div>
+            <div class="news-summary">10月13日，新西兰商业、创新和就业部发布公告称，调查认定铝型材的进口对国内产业造成了损害，但未达到《2014年新西兰贸易（保障措施）法》所要求的严重损害标准，因此决定不对铝型材实施保障措施，终止调查。该调查于<em class="hl-hot">2026年5月28日</em>发起。同周另一条相关动态：海关总署数据显示2026年9月中国出口未锻轧铝及铝材<em class="hl-hot">65.6万吨</em>，1-9月累计出口<em class="hl-hot">532万吨</em>、同比增长<em class="hl-hot">17.8%</em>。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">「有损害但不严重」这个认定口径值得记下来——它给后续其他国家的同类调查设了一个参照。叠加前几日澳洲铝门窗双反初裁，门窗与型材出口企业的地区风险正在明显分化。</span></div>
+            
+            <a class="read-more" href="https://news.cnal.com/2026/10-16/1792141754670816.shtml" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 成品家具 -->
+        <div class="category-title">
+            <span>成品家具</span>
+            <span class="en">Finished Furniture</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">2</div>
+                <div class="news-title">廊坊<em class="hl">霸州</em>家具产业集群提质升级：<em class="hl-hot">4200余家</em>企业、年产1亿台套，2025年集群营收突破<em class="hl-hot">530亿元</em></div>
+            </div>
+            <div class="news-meta"><span class="source-tag">廊坊日报全媒体</span><span>2026-10-15</span></div>
+            <div class="news-summary">霸州家具产业起步于上世纪80年代，已是河北省107个县域特色产业集群之一。目前拥有家具及配套企业<em class="hl-hot">4200余家</em>、从业人员超10万人，年产家具<em class="hl-hot">1亿台</em>（套），产品远销全球<em class="hl-hot">130多个</em>国家和地区，2025年产业集群营业收入突破<em class="hl-hot">530亿元</em>。当地以龙头企业带动，引导企业从「模仿跟跑」转向「自主研发」，伊曼双新组建研发团队、建设自动化产线，每年推出几十款原创新品，产值预计3亿元、同比增长约30%。第34届中国·胜芳国际家居博览会吸引1700余家企业、超10万名采购商，现场签约<em class="hl-hot">近2000单</em>。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">从代工走量到原创设计，霸州这条路径对其它县域家具集群是可复制的样本：先靠研发脱离价格战，再用展贸+直播把品牌直接推到海外采购商面前。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7696788158520574500" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 定制家居 -->
+        <div class="category-title">
+            <span>定制家居</span>
+            <span class="en">Custom Home Furnishing</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">3</div>
+                <div class="news-title"><em class="hl">玫瑰岛</em><em class="hl-hot">7.58亿</em>建中山新总部：91亩、建面<em class="hl-hot">22万㎡</em>，单品门店退场、全卫定制交付中心上位</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">今日头条·定制家居圈</span><span>2026-10-14</span></div>
+            <div class="news-summary">玫瑰岛在中山港口镇投资<em class="hl-hot">7.58亿</em>元建设新总部，总用地约<em class="hl-hot">91亩</em>、总建筑面积约<em class="hl-hot">22万㎡</em>，将淋浴房、全景门、全卫定制与玻璃合并展示。公司副总裁徐思佳表示，线上和海外客户越来越吃「形象好的大展厅」。同期志邦家居公告拟以<em class="hl-hot">2亿</em>元对全资子公司新加坡志邦增资，并由其向孙公司泰国德志增资不超过<em class="hl-hot">2亿</em>元，用于在泰国罗勇府新建智能制造基地，建设期<em class="hl-hot">18个月</em>，预计2026年12月15日开工。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">一端砸大展厅、一端砸海外产能，两笔钱指向同一件事：定制行业的成交场和制造场都在往「重」里走。轻资产代工模式的生存空间会被两头挤压。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7696083328306315826" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 智能家居 -->
+        <div class="category-title">
+            <span>智能家居</span>
+            <span class="en">Smart Home</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">4</div>
+                <div class="news-title"><em class="hl">广交会</em>家电深观察：<em class="hl">AI</em>进「大脑」、绿色成底色，出海从卖单品转向卖场景卖生态</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">羊城晚报·羊城派</span><span>2026-10-18</span></div>
+            <div class="news-summary">第140届广交会上，海尔展出AI家务机器人「<em class="hl">海娃</em>」，可自动拾取衣物、联动洗衣机完成送洗转运烘干与收纳，生鲜到货后还可运送至冰箱前协助识别分区存储；海信AI Companion Suite覆盖厨居、洗护、空气三大场景，116英寸RGB MiniLED电视UXS实现<em class="hl-hot">110% BT.2020</em>色域；美的将毫米波雷达与AI全域温控M-Station系统结合，实时感知温湿度、人员活动与空气质量自动切换送风，配合自研AI节能算法能耗最高降低<em class="hl-hot">50%</em>。美的在全球拥有<em class="hl-hot">68个</em>制造基地，其中<em class="hl-hot">45个</em>位于海外。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">出口逻辑已经从「拼单品价格和交期」变成「拼整套场景方案的交付能力」。只会做单品的工厂，接下来会被整合进别人的生态里当配套，而不是自己谈客户。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7697999733570257435" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 发热新材料 -->
+        <div class="category-title">
+            <span>发热新材料</span>
+            <span class="en">Heating New Materials</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">5</div>
+                <div class="news-title"><em class="hl">石墨烯</em>取暖产业化仍在过成本关：CVD法制备成本<em class="hl-hot">500元/㎡</em>，目标压到<em class="hl-hot">200元/㎡</em>以内</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">百度爱采购·行业分析</span><span>2026-10-15</span></div>
+            <div class="news-summary">石墨烯导热效率达<em class="hl-hot">5300W/(m·K)</em>，远超铜等传统材料，原子级厚度可加工成薄膜、涂料，化学稳定性在-200~300℃环境无衰减。远红外发热膜将石墨烯浆料印刷于PET基材，电热转换效率达<em class="hl-hot">99%</em>；0.3mm厚发热层较传统水暖节能<em class="hl-hot">40%以上</em>；智能温控服装3.7V低压驱动即可维持50℃恒温。但产业化障碍明确：CVD法制备成本高达500元/平方米是商用化主要制约；大面积成膜易出现晶界缺陷影响发热均匀性；长期使用后纳米片层剥离问题尚未完全解决。突破方向为氧化还原法工艺优化、石墨烯/碳纳米管复合结构，并建立UL认证体系确保<em class="hl-hot">30000小时</em>寿命。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">技术参数已经漂亮，卡点在成本与寿命认证。谁先把成本压进200元/㎡区间并拿到30000小时寿命认证，谁就能把石墨烯从「卖点」做成人人可采购的标准件。</span></div>
+            
+            <a class="read-more" href="https://b2bwiki.aipage.com/article/d0inoqhftjspasp3ehrg" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 家居海外出口 -->
+        <div class="category-title">
+            <span>家居海外出口</span>
+            <span class="en">Home Furnishing Export</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">6</div>
+                <div class="news-title"><em class="hl">中智自贸协定</em>20年红利释放：河南钢制家具对智利出口额增长<em class="hl-hot">80%</em>，原产地证书成「金钥匙」</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">人民网·金台资讯</span><span>2026-10-14</span></div>
+            <div class="news-summary">2006年中智自贸协定生效，中智双边贸易从2005年的70多亿美元增至2025年的<em class="hl-hot">669.05亿美元</em>，中国连续多年为智利第一大贸易伙伴。今年前三季度，郑州海关累计签发中智自贸协定原产地证书<em class="hl-hot">2976份</em>、同比增长<em class="hl-hot">12.8%</em>，助力价值<em class="hl-hot">近20亿元</em>的河南商品出口智利。洛阳伊滨庞村镇是全国最大钢制家居产业基地之一，河南钢美科技聚焦南美家居需求优化钢制家具防锈防腐工艺，适配智利多雨、昼夜温差大的气候，并积极申领原产地证书减让进口关税，今年以来对智利出口额增长<em class="hl-hot">80%</em>。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">「高品质+零关税」的组合拳在拉美市场验证有效。对钢制家具这类标准化程度高的品类，原产地证书是可以直接换算成报价竞争力的工具，很多企业还没用起来。</span></div>
+            
+            <a class="read-more" href="https://dy.163.com/article/L97FE0DR05346936.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- BBC业务 -->
+        <div class="category-title">
+            <span>BBC业务</span>
+            <span class="en">Real Estate + Decoration B2B2C</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">7</div>
+                <div class="news-title"><em class="hl">兔宝宝</em>×<em class="hl">捷诚装饰</em>战略合作：构建「核心基材+专业定制」供应链协同，共拓海南<em class="hl">整装</em></div>
+            </div>
+            <div class="news-meta"><span class="source-tag">慧亚家居网</span><span>2026-10-17</span></div>
+            <div class="news-summary">兔宝宝与捷诚装饰战略合作签约仪式在海南举行，德华兔宝宝家装运营公司副总经理李舰等与捷诚装饰负责人共同见证。捷诚装饰是海南本土家装行业领军力量。本次合作核心是创新构建「<em class="hl">核心基材+专业定制</em>」专属供应链协同模式：兔宝宝为捷诚输送高标准环保板材，同时依托服务商旗下家具厂的精深加工能力，将优质基材转化为高品质定制产品，形成「<em class="hl">前端严选基材</em>、<em class="hl">后端精工落地</em>」的闭环服务，提升交付效率与产品质感。兔宝宝向捷诚授予健康板材合作伙伴授权牌。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">板材商直接绑定区域头部装企，本质是把「材料供应」升级成「交付能力输出」。这类绑定一旦跑通，区域中小装企会被迅速拉开身位——基材端的站队会提前决定终端格局。</span></div>
+            
+            <a class="read-more" href="https://m.jia400.com/shop/25242-207033.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 轻量化合金新材料 -->
+        <div class="category-title">
+            <span>轻量化合金新材料</span>
+            <span class="en">Lightweight Alloy Materials</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">8</div>
+                <div class="news-title">2026<em class="hl">低空经济</em>产业发展大会开幕：<em class="hl">铝钛</em><em class="hl">轻量化</em>材料结构性机会被提前定价</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">长江有色金属网</span><span>2026-10-15</span></div>
+            <div class="news-summary">2026低空经济产业发展大会在自贡开幕，围绕通用机场、垂直起降场与中大型无人机等场景展开。铝钛轻量化材料的结构性机会正被提前定价，为铝消费再添新的成长曲线。同期产业链数据显示：电工圆铝杆9.5毫米均价<em class="hl-hot">24400</em>元/吨、6063铝棒华南<em class="hl-hot">22300</em>元/吨同步走高，铝合金AlSi10MgMn报<em class="hl-hot">27400</em>元/吨，汽车<em class="hl">一体化压铸</em>与<em class="hl">光伏边框</em>用铝需求保持景气；铝在电网投资与特高压建设中的用量稳步抬升，导体与散热部件用铝为传统消费托底。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">低空经济目前还只是「提前定价」，真正放量要等适航与基建落地。但铝加工企业现在就该做技术储备——一旦起量，能供航空级铝钛的产线会第一时间被锁定。</span></div>
+            
+            <a class="read-more" href="https://copper.ccmn.cn/news/ZX018/202610/4a7f6d07cc9144ef8a0b740a0c1b0b1d.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+  <footer>
+    <p>© 2026 AI助手 · 行业日报 · 每日行业快报</p>
+    
+    <p>本期共 8 条 · 8 个业务条线 · 生成于 2026/10/19 10:41:24</p>
+    <p class="disclaimer">免责声明：本报告内容均来源于公开网络，仅供参考学习，不构成任何投资建议。文中观点仅代表作者个人立场，不代表本平台观点。如有版权问题，请联系删除。</p>
+  </footer>
+</div>
+</body>
+</html>
