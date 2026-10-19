@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI助手 · 行业日报 | 2026年10月17日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#4361ee; --primary-light:#eef2ff;
+    --bg:#f4f6f9; --card-bg:#ffffff;
+    --text-main:#1f2937; --text-sub:#6b7280; --text-light:#9ca3af;
+    --insight-bg:#f8fafc; --insight-border:#e2e8f0;
+    --impact-bg:#fff7ed; --impact-text:#c2410c;
+    --hot:#D64545; --line:#e5e7eb;
+    --radius:12px;
+    --shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03);
+    --shadow-hover:0 10px 15px -3px rgba(0,0,0,.08), 0 4px 6px -2px rgba(0,0,0,.04);
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background-color:var(--bg); color:var(--text-main);
+    line-height:1.6; padding-bottom:40px; -webkit-font-smoothing:antialiased;
+  }
+
+  /* Header */
+  header{
+    text-align:center; padding:40px 20px;
+    background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%);
+    color:#fff; border-radius:0 0 24px 24px; margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(67,97,238,.3);
+  }
+  header h1{font-size:28px; font-weight:900; margin-bottom:8px; letter-spacing:1px;}
+  header .date{font-size:16px; opacity:.9; font-weight:500;}
+  header .window{
+    display:inline-block; margin-top:10px; padding:3px 12px;
+    font-size:12.5px; opacity:.9; border-radius:999px; background:rgba(255,255,255,.16);
+  }
+
+  .container{max-width:800px; margin:0 auto; padding:20px;}
+
+  /* Category Title */
+  .category-title{
+    display:flex; align-items:center; margin:40px 0 20px;
+    font-size:20px; font-weight:800; color:var(--text-main);
+  }
+  .category-title::before{
+    content:""; display:block; width:6px; height:24px;
+    background-color:var(--primary); border-radius:3px; margin-right:12px;
+  }
+  .category-title .en{
+    margin-left:auto; font-size:13px; color:var(--text-light);
+    font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  }
+
+  /* News Card */
+  .news-card{
+    background:var(--card-bg); border-radius:var(--radius);
+    padding:24px; margin-bottom:20px; box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid rgba(0,0,0,.02); position:relative; overflow:hidden;
+  }
+  .news-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-hover);}
+
+  .card-header{display:flex; align-items:flex-start; margin-bottom:12px;}
+  .number-badge{
+    background-color:var(--primary); color:#fff; width:28px; height:28px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:15px; flex-shrink:0; margin-right:12px; margin-top:2px;
+    box-shadow:0 2px 4px rgba(67,97,238,.3); font-variant-numeric:tabular-nums;
+  }
+  .news-title{font-size:17px; font-weight:700; line-height:1.4; color:var(--primary); flex:1;}
+
+  .news-meta{
+    font-size:13px; color:var(--text-light); margin-bottom:12px;
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  }
+  .source-tag{background-color:#f3f4f6; padding:2px 8px; border-radius:4px; font-size:12px;}
+
+  .card-eng{
+    display:flex; flex-wrap:wrap; gap:4px 14px; font-size:12.5px;
+    color:var(--text-light); margin:-4px 0 12px; font-variant-numeric:tabular-nums;
+  }
+  .card-eng span{white-space:nowrap;}
+
+  .news-summary{color:var(--text-sub); font-size:15px; margin-bottom:16px; text-align:justify;}
+
+  /* Insight & Impact */
+  .insight-box{
+    background-color:var(--insight-bg); border:1px solid var(--insight-border);
+    border-radius:8px; padding:12px 16px; margin-bottom:10px; font-size:14px;
+  }
+  .insight-label{font-weight:700; color:var(--text-main); margin-right:6px;}
+  .insight-text{color:var(--text-sub);}
+
+  .impact-box{
+    background-color:var(--impact-bg); border-radius:8px; padding:12px 16px;
+    font-size:14px; color:var(--impact-text); display:flex; align-items:flex-start;
+  }
+  .impact-icon{margin-right:8px; font-weight:700;}
+
+  .hl{color:#3a0ca3; font-weight:700; font-style:normal;}
+  .hl-hot{color:var(--hot); font-weight:700; font-style:normal;}
+
+  /* Link Button */
+  .read-more{
+    display:inline-flex; align-items:center; margin-top:16px;
+    color:var(--primary); text-decoration:none; font-size:14px; font-weight:600;
+    padding:6px 12px; border-radius:6px; background-color:var(--primary-light);
+    transition:background-color .2s;
+  }
+  .read-more:hover{background-color:#dbe4ff;}
+  .read-more::after{content:'→'; margin-left:6px; transition:transform .2s;}
+  .read-more:hover::after{transform:translateX(3px);}
+
+  /* Footer */
+  footer{
+    text-align:center; margin-top:50px; color:var(--text-light); font-size:13px;
+    border-top:1px solid var(--line); padding-top:30px;
+  }
+  .disclaimer{max-width:600px; margin:10px auto 0; font-size:12px; line-height:1.5; opacity:.8;}
+
+  @media (max-width:600px){
+    .container{padding:12px;}
+    header{padding:30px 15px; margin-bottom:20px;}
+    header h1{font-size:24px;}
+    .news-card{padding:20px;}
+    .news-summary{font-size:14.5px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI助手 · 行业日报</h1>
+  <div class="date">2026年10月17日 星期六</div>
+  
+</header>
+<div class="container">
+
+        <!-- 门窗幕墙 -->
+        <div class="category-title">
+            <span>门窗幕墙</span>
+            <span class="en">Doors, Windows &amp; Curtain Walls</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">1</div>
+                <div class="news-title">2026<em class="hl">临朐窗博会</em>启幕：首届铝工业展同期举办，<em class="hl">智能门窗</em>从「材质升级」迈向「场景革新」</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">新浪·头条文章</span><span>2026-10-14</span></div>
+            <div class="news-summary">第二十一届中国（临朐）家居门窗博览会暨第一届临朐铝工业展于10月12日至14日在临朐国际会展中心举办，展馆面积达<em class="hl-hot">7万平方米</em>，汇聚国内外数百家龙头企业。本届首次增设铝工业展板块，覆盖系统门窗、智能遮阳、铝制家居、工业铝材及精深加工制品。智能门窗展区成为看点，多款自研系统可联动全屋智能终端，实现<em class="hl">风雨感应</em>、<em class="hl">自动开合</em>、温湿度调节一体化。临朐集聚<em class="hl-hot">460余家</em>铝产业关联企业，形成「立足铝、延伸铝、超越铝」格局。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">门窗展从「成品陈列」转向「全生态覆盖」，说明竞争重心已从型材与五金，移到系统能力和场景联动。能接进全屋智能协议的厂家，下一步会拿走工程集采的溢价。</span></div>
+            
+            <a class="read-more" href="https://k.sina.cn/article_5328858693_13d9fee4502002k392.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 成品家具 -->
+        <div class="category-title">
+            <span>成品家具</span>
+            <span class="en">Finished Furniture</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">2</div>
+                <div class="news-title">2026浦东家具家居双展收官：总参观18.04万人次同比增10.3%，海外买家增<em class="hl-hot">14.6%</em></div>
+            </div>
+            <div class="news-meta"><span class="source-tag">央广网</span><span>2026-10-15</span></div>
+            <div class="news-summary">第三十一届中国国际家具展览会与2026摩登上海设计周相继收官。官方数据显示展会总参观人次达<em class="hl-hot">180448</em>，同比增长<em class="hl-hot">10.3%</em>；海外专业买家<em class="hl-hot">37394</em>人次，同比增长<em class="hl-hot">14.6%</em>。展览面积35万平方米、50个专业展馆，集结26个国家和地区<em class="hl-hot">3200余个</em>品牌，配套112场专业论坛、24场主题特展。荷兰、英国、蒙古、保加利亚、俄罗斯、巴西六大国家展团首次亮相；法国Ligne Roset、北美Ashley等国际巨头参展。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">在国内家具零售额下滑的背景下海外买家双位数增长，说明中国家居的增量正在从内需切到外需。做成品家具的企业，出海通道的优先级该上调了。</span></div>
+            
+            <a class="read-more" href="https://www.cnr.cn/shanghai/tt/20261015/t20261015_527842353.shtml" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 定制家居 -->
+        <div class="category-title">
+            <span>定制家居</span>
+            <span class="en">Custom Home Furnishing</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">3</div>
+                <div class="news-title">好太太&amp;<em class="hl">好莱客</em><em class="hl-hot">22亿</em>国际中心广州金融城封顶：<em class="hl-hot">176米</em>、建面10.84万㎡，双上市公司共用</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">今日头条·定制家居圈</span><span>2026-10-14</span></div>
+            <div class="news-summary">好太太与好莱客合计<em class="hl-hot">22亿</em>元的国际中心在广州国际金融城封顶，高<em class="hl-hot">176米</em>、总建筑面积<em class="hl-hot">10.84万㎡</em>。该中心由好太太（智能晾晒/全屋智能）占<em class="hl-hot">70%</em>、好莱客（定制家居）占<em class="hl-hot">30%</em>，集研发、集采、电商、展览于一体，是两家上市公司共用的全球智慧创新中心。同期行业内还有多家企业在低谷期加码总部与智造投入：恒洁签下佛山三水乐平120亩地做智能净水与智能家居电子；富轩于千灯湖中轴建总部及研发智造基地。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">行业整体喊「现金为王」时头部反而补齐总部、研发、智造、展示四块短板——这是在用资产换下一轮的准入门槛。中小定制品牌要警惕被挤出主流卖场的展示位。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7696083328306315826" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 智能家居 -->
+        <div class="category-title">
+            <span>智能家居</span>
+            <span class="en">Smart Home</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">4</div>
+                <div class="news-title">第四批<em class="hl-hot">625亿</em>国补资金全部下达：家电按售价<em class="hl-hot">15%</em>补贴单件上限<em class="hl-hot">1500元</em>，全年2500亿落地</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">长果在线·每日家电新闻日报</span><span>2026-10-17</span></div>
+            <div class="news-summary">国家发改委、财政部已完成第四批<em class="hl-hot">625亿</em>元超长期特别国债资金下达，全年<em class="hl-hot">2500亿</em>元消费品以旧换新补贴资金全部落地。家电品类按售价15%补贴、单件上限1500元；2026年上半年家电以旧换新累计6326.6万台。商务部数据显示10月1日至6日家电以旧换新<em class="hl-hot">284.8万台</em>、带动销售额<em class="hl-hot">123.4亿</em>元，数码和智能产品购新305.2万件、带动86.8亿元；国庆期间AI智能家电销售同比增长<em class="hl">超四成</em>。多地还将智能加湿器、智能床、智能按摩椅纳入地方补贴。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">补贴额度已全部到位，年底是冲量窗口。但要注意这是政策拉动的短期脉冲——真正的考验是双十一之后需求能不能自然承接，别把补贴当常态。</span></div>
+            
+            <a class="read-more" href="http://mp.weixin.qq.com/s?__biz=MzU0ODYwMzMwOQ==&amp;mid=2247487155&amp;idx=1&amp;sn=2463cad8c9908b34ec6715b7683e5cd0" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 发热新材料 -->
+        <div class="category-title">
+            <span>发热新材料</span>
+            <span class="en">Heating New Materials</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">5</div>
+                <div class="news-title"><em class="hl">石墨烯</em>电地暖<em class="hl-hot">99%</em>热转换率意味着什么：比电阻丝地暖<em class="hl-hot">省电20%以上</em>，比水暖省30%以上</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">今日头条·四川烯材科技</span><span>2026-10-13</span></div>
+            <div class="news-summary">热转换率衡量输入电能有多大比例变成实际热量。普通电阻丝电地暖电热转换率通常<em class="hl-hot">55%-60%</em>，碳纤维电地暖约<em class="hl-hot">95%</em>；水地暖燃气壁挂炉标称热效率约<em class="hl-hot">88%</em>，叠加管道散热与回填层蓄热延迟后系统综合热效率再打折扣。石墨烯电热膜通电后碳原子在电场下直接产热，发热层紧贴地板，几乎无中间介质损耗。数据显示石墨烯地暖比传统电阻丝电地暖节省<em class="hl-hot">20%以上</em>电量、比水暖节省<em class="hl-hot">30%以上</em>能耗，开启约<em class="hl-hot">15分钟</em>地板表面即有热感，发热膜寿命可达50年以上。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">99%这个数字本身不构成选择依据——市场上有掺少量石墨烯粉的伪产品，热衰减快。真正的判断点是厂家是否掌握电热膜核心技术、能否出具第三方热转换效率检测报告。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7695948639579701794" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 家居海外出口 -->
+        <div class="category-title">
+            <span>家居海外出口</span>
+            <span class="en">Home Furnishing Export</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">6</div>
+                <div class="news-title">第140届<em class="hl">广交会</em>开幕：<em class="hl-hot">3.2万家</em>企业参展，新品占比23.2%、绿色产品<em class="hl-hot">26%</em>均创历史新高</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">网易·浙江家具</span><span>2026-10-15</span></div>
+            <div class="news-summary">第140届中国进出口商品交易会于10月15日在广州琶洲开幕，恰逢广交会创办70周年。本届展览规模达<em class="hl-hot">155万平方米</em>、分3期举办至11月4日；<em class="hl-hot">3.2万家</em>参展企业中，专精特新、单项冠军等优质企业超<em class="hl-hot">1.1万家</em>，64%的参展企业应用工业互联网、人工智能等新技术。新产品和绿色产品占比分别达<em class="hl-hot">23.2%</em>和<em class="hl-hot">26%</em>，均创历史新高。第一期以「先进制造」为主题，展期10月15日至19日，参展企业超1.2万家。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">绿色产品占比26%创新高不是环保姿态，而是欧盟CBAM等低碳贸易规则倒逼的准入改造。没有碳足迹数据的出口单品，明年会越来越难进欧洲柜。</span></div>
+            
+            <a class="read-more" href="https://dy.163.com/article/L9D6IGCV05409AVB.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- BBC业务 -->
+        <div class="category-title">
+            <span>BBC业务</span>
+            <span class="en">Real Estate + Decoration B2B2C</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">7</div>
+                <div class="news-title">存量市场的双十一试炼：前8月二手房交易占比<em class="hl-hot">52%</em>，上半年规上家具制造业利润下滑<em class="hl-hot">52.7%</em></div>
+            </div>
+            <div class="news-meta"><span class="source-tag">中国经济新闻网</span><span>2026-10-15</span></div>
+            <div class="news-summary">10月15日2026年双十一预售开启，「去节日化」「国补叠加」「平台分化」成三个关键词。住建部数据显示2026年前8个月二手房交易占比已达<em class="hl-hot">52%</em>，行业增长逻辑从「新房交付带动」转向「存量翻新驱动」。国家统计局显示2026年上半年限额以上单位家具类零售额同比下降<em class="hl-hot">3.7%</em>，规模以上家具制造业利润下滑<em class="hl-hot">52.7%</em>。线上获客成本逐年走高、线下门店坪效持续下滑。今年各平台定位差异明显：天猫倾斜<em class="hl-hot">88VIP</em>、抖音加码达播、京东提前开启主打官方直降。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">两组数字放一起看很清楚：交易结构已经翻到存量，但制造端利润被砍掉一半以上。中间差的那部分，是被渠道成本和价格战吃掉的——谁能做全域协同、把经销商转成服务商，谁才能留下利润。</span></div>
+            
+            <a class="read-more" href="https://www.cet.com.cn/wzsy/cyzx/10614226.shtml" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 轻量化合金新材料 -->
+        <div class="category-title">
+            <span>轻量化合金新材料</span>
+            <span class="en">Lightweight Alloy Materials</span>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">8</div>
+                <div class="news-title">新能源轻量化点燃铝需求传导链：<em class="hl">绿电铝</em><em class="hl-hot">23820</em>元/吨跌50元，加工材跌幅普遍小于期货端</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">长江有色金属网</span><span>2026-10-14</span></div>
+            <div class="news-summary">10月14日沪铝2611合约报<em class="hl-hot">23385</em>元/吨跌75元，但铝系加工材走出抗跌分化：绿电铝长江综合报<em class="hl-hot">23820</em>元/吨跌50元；铸造铝合金A356.2华东<em class="hl-hot">23950</em>元、ADC12华东23590元、A380华东25600元，跌幅均小于期货端；锂电铝箔9微米<em class="hl-hot">40870</em>元、12微米39370元、15微米36870元均跌50元；电工圆铝杆24650元、6063铝棒华南22400元。镁合金AM60B报<em class="hl-hot">17800</em>元跌200元。终端看，光伏复合项目、电动车集成压铸、储能集装箱壳体持续放量。成本端氧化铝华东<em class="hl-hot">2710</em>元跌10元。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">抗跌不是普涨而是结构性的：有新能源背书的产品跌幅更小，传统建筑型材跟随期货走弱。这条分化曲线就是需求结构变迁本身——做建筑铝材的要看清自己的位置。</span></div>
+            
+            <a class="read-more" href="https://alu.ccmn.cn/news/ZX018/202610/4c17c7b2e3344c50b30fc0bd68c99f75.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+  <footer>
+    <p>© 2026 AI助手 · 行业日报 · 每日行业快报</p>
+    
+    <p>本期共 8 条 · 8 个业务条线 · 生成于 2026/10/19 10:41:23</p>
+    <p class="disclaimer">免责声明：本报告内容均来源于公开网络，仅供参考学习，不构成任何投资建议。文中观点仅代表作者个人立场，不代表本平台观点。如有版权问题，请联系删除。</p>
+  </footer>
+</div>
+</body>
+</html>
