@@ -78,6 +78,9 @@
     display:flex; align-items:center; flex-wrap:wrap; gap:8px;
   }
   .source-tag{background-color:#f3f4f6; padding:2px 8px; border-radius:4px; font-size:12px;}
+  /* 跨域标记：只表示「这条内容同时沾定制和智能」，不是板块 */
+  .cross-chip{background-color:#fff7ed; color:#c2410c; border:1px solid #fed7aa;
+   padding:1px 7px; border-radius:4px; font-size:12px; font-weight:600;}
 
   .card-eng{
     display:flex; flex-wrap:wrap; gap:4px 14px; font-size:12.5px;
@@ -100,6 +103,35 @@
     font-size:14px; color:var(--impact-text); display:flex; align-items:flex-start;
   }
   .impact-icon{margin-right:8px; font-weight:700;}
+
+  /* 简介卡：要点列表 / 作者行 / 本地存档标记 */
+  .byline{color:var(--text-main); font-weight:600;}
+  .point-list{list-style:none; margin:0 0 14px; padding:0;}
+  .point-list li{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:14.5px; color:var(--text-sub); line-height:1.62;
+    padding:6px 0; border-bottom:1px dashed #eef0f4;
+  }
+  .point-list li:last-child{border-bottom:0;}
+  .pt-no{
+    flex:0 0 20px; height:20px; margin-top:2px; border-radius:50%;
+    background:#eef2ff; color:var(--primary); font-size:12px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-variant-numeric:tabular-nums;
+  }
+  .pt-tx{flex:1;}
+  .card-foot{display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px;}
+  .card-foot .read-more{margin-top:0;}
+  .asset-chip{
+    font-size:12px; color:#0f766e; background:#ecfdf5; border:1px solid #d1fae5;
+    padding:4px 9px; border-radius:6px; white-space:nowrap;
+  }
+
+  /* 主轴专区 */
+  .axis-title::before{background-color:#c2410c;}
+  .axis-title{color:#9a3412;}
+  .axis-title .en{color:#fb923c;}
+  .axis-card{border-left:4px solid #f97316;}
+  .axis-badge{background-color:#f97316; box-shadow:0 2px 4px rgba(249,115,22,.35);}
 
   .hl{color:#3a0ca3; font-weight:700; font-style:normal;}
   .hl-hot{color:var(--hot); font-weight:700; font-style:normal;}
@@ -152,500 +184,142 @@
 </header>
 <div class="container">
 
-        <!-- 门窗幕墙 -->
+        <!-- 定制家居 -->
         <div class="category-title">
-            <span>门窗幕墙</span>
-            <span class="en">Doors, Windows &amp; Curtain Walls</span>
+            <span>🏠 定制家居</span>
+            <span class="en">Custom Home Furnishing</span>
         </div>
+        
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">1</div>
-                <div class="news-title">上海临港、无锡锡东两单幕墙招标合计 7387 万元，铝锭报 23650 元/吨</div>
+                <div class="news-title">顾家220亿市值反超欧派，家居「一哥」易主</div>
             </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · GBAC 门窗幕墙行业简报</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日门窗幕墙行业简报显示，上海临港新片区 F03-01 地块研发楼外立面幕墙工程估算 4122 万元、幕墙面积约 36000 平方米，要求建筑幕墙专业承包一级且预留 BIPV 接口，资格预审截止 10 月 27 日；无锡锡东新城 XDG-2023-20 号地块幕墙工程估算 3265 万元、面积约 32000 平方米，投标截止 11 月 6 日。同日长江有色 A00 铝锭华东均价 23650 元/吨，沪铝主力 23480 元/吨、现货小幅升水，幕墙型材厂仅按需采购。江苏住建更新《绿色建材产品采信清单》，选用清单内节能玻璃、铝型材可在评标中获技术分。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">两单都是产业公建、都要求一级资质、都卡绿色建材——招标门槛正在从「价格 + 资质」往「绿色建材清单 + 节能检测方案」迁移。江苏把清单内产品直接折算成技术分，意味着型材和玻璃的采购决策会前移到投标阶段，而不是中标后。要盯的是：清单里有没有我们的牌子和型号；没有的话，这轮上海、无锡的单子连技术标都吃亏。</span></div>
-            
-            <a class="read-more" href="http://mp.weixin.qq.com/s?__biz=Mzk1NzM1Njg1OA==&amp;mid=2247484212&amp;idx=1&amp;sn=5c6107d5b8b78ae1581f658c9ed64ca2" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">泛家居圈</span><span>2026-10-19 13:31</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">10月16日收盘顾家市值220亿元首次超过欧派，而年初它还落后约65亿元</span></li><li><span class="pt-no">2</span><span class="pt-tx">上半年欧派营收59.5亿元降27.79%、净利腰斩56.62%；顾家营收98.75亿元微增0.75%，净利仅降9.31%</span></li><li><span class="pt-no">3</span><span class="pt-tx">顾家境外收入占比已达48.4%，欧派橱柜与衣柜两大核心品类跌幅均超过27%</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">市值换位不是谁更强，是谁的伤口更浅。欧派输在位置——定制在装修链条最前端，新房竣工一掉就直接挨刀；顾家赢在结构——软体更靠存量换新，出口又顶了近一半。这条消息的价值不在排名，而在它给出了抗周期配方：品类位置加出海比例。我们的报价与产能规划里如果缺这两个系数，明年还会被同一波浪打一次。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?__biz=Mzg3OTk2OTU3OA==&amp;mid=2247634527&amp;idx=1&amp;sn=1de59e16961149bca5d2e9318552a0d1&amp;chksm=cefdc5827a50f79235c23392672dbd28e4b81cf1740ebe308210b445b566aec5510ae271309c&amp;scene=126&amp;sessionid=1792461287#rd" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">2</div>
-                <div class="news-title">湛江通报城乡建设绿色发展检查：绿色建筑不达标不予竣工验收</div>
+                <div class="news-title">欧派家居回购前夜：66%控股权下的治理信号与机构低配现实</div>
             </div>
-            <div class="news-meta"><span class="source-tag">湛江市住房和城乡建设局</span><span>2026-10-19</span></div>
-            <div class="news-summary">湛江市住房和城乡建设局 10 月 19 日发布《关于 2026 年城乡建设绿色发展检查工作情况的通报》，点名方案缺失、公示不到位等共性问题，要求施工单位编制绿色建筑施工方案、监理单位同步编制监理方案，严格执行施工样板引路制度并强化技术交底。通报明确：建设单位在竣工验收时须组织查验新建民用建筑是否符合施工图设计文件和绿色建筑标准，不符合的一律不得出具竣工验收合格报告；对逾期未完成整改或整改不到位的项目将按规定进一步处理，未被抽查的项目单位须指定专人开展<em class="hl">全面自查自纠</em>。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">绿色建筑从「设计阶段加分项」变成「验收阶段的否决项」——这一刀最硬，因为卡的是竣工备案而不是评优。对做门窗幕墙和节能材料的企业，意味着进场材料的检测报告、样板引路记录会被逐项查。真正的风险不在被抽查的项目，而在同城那些「没被抽到就以为没事」的项目。要盯广东其他地市会不会跟进这套通报机制。</span></div>
-            
-            <a class="read-more" href="https://www.zhanjiang.gov.cn/zjsfw/bmdh/jsxxw/zwgk/tzgg/content/post_2238674.html" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">亚太家居网</span><span>2026-10-19 17:30</span><span class="source-tag">视频号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">欧派在66%控股权结构下启动回购，被解读为对股价与治理的双重表态</span></li><li><span class="pt-no">2</span><span class="pt-tx">机构配置比例偏低，市场对定制板块的盈利预期仍在向下修正</span></li><li><span class="pt-no">3</span><span class="pt-tx">回购能托住短期股价，但改变不了竣工下滑带来的需求缺口</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">回购是防守动作，不是进攻信号。更实用的读法是：头部企业在用现金买时间，说明它们判断底部还没到。这时候我们不该跟着赌回暖，而应把资源压在确定性更高的两件事上——出口订单的合规能力、国内存量改造的交付效率。等行业真见底，这两块能立刻放量。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://weixin.qq.com/sph/Aagz4sbp0R" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">3</div>
-                <div class="news-title">澳洲对华铝制门窗反倾销初裁落地：不合作企业税率 70.4%，应诉企业 0~51.6%</div>
+                <div class="news-title">顾家顾江生、皮阿诺马礼斌等家居创始人纷纷退场，行业下一站去哪？</div>
             </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · 泛家居圈</span><span>2026-10-19</span></div>
-            <div class="news-summary">澳大利亚贸易救济委员会 10 月 14 日发布第 2026/147 号公告，对进口自中国的铝制门窗（Aluminium Windows and Doors）作出反倾销肯定性初裁，自 10 月 15 日起以保证金形式征收临时反倾销税与反补贴税，涉及海关编码 <em class="hl-hot">7610.10.00.12</em>。应诉企业税率明显分化：深圳中盈建科（Altop Facade）反倾销、反补贴均为 0；佛山澳美家 5.3%；广东科腾新材 12.1%；中山博路德幕墙门窗与其他应诉企业同为 24.4%；广东远江幕墙 34.8%；珠海翼鹏 51.6%。不合作及所有其他出口商反倾销税率 70.4%、反补贴 2.9%。本案由 Ventora Group 与澳大利亚玻璃门窗协会申请，2025 年 11 月 25 日立案。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">同一批中国出口商，税率从 0 到 51.6%，差出 51.6 个百分点——差别不在产品，在有没有应诉。中盈建科拿到 0，说明配合调查、交出完整成本数据这条路是走得通的；不合作的代价是 70.4%，等于直接退出澳洲市场。对我们意味着两件事：手上有澳洲订单的，立刻核对报关主体落在哪一档；更关键的是「应诉成本 vs 税率差」要提前建模型，不能等立案才反应。盯两点：初裁到终裁（预计明年上半年）会不会调整，以及欧盟、美国会不会跟进同类调查。</span></div>
-            
-            <a class="read-more" href="https://mp.weixin.qq.com/s?__biz=Mzg3OTk2OTU3OA==&amp;mid=2247634553&amp;idx=1&amp;sn=73a60cacc40d84aef5e472da1353f7b4&amp;chksm=cea1b54c62d2ca9495c6215764816b64594110443af31d54bb8d3a3544467abafb3570eb3726" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- 成品家具 -->
-        <div class="category-title">
-            <span>成品家具</span>
-            <span class="en">Finished Furniture</span>
+            <div class="news-meta"><span class="byline">泛家居圈</span><span>2026-10-19 19:28</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">顾家顾江生、皮阿诺马礼斌等一批家居创始人集中退出经营一线，接任者多为职业经理人或资本方</span></li><li><span class="pt-no">2</span><span class="pt-tx">行业从增量扩张转存量博弈，创始人红利（胆量、渠道、杠杆）在低增长环境里迅速失效</span></li><li><span class="pt-no">3</span><span class="pt-tx">考核口径随之切换：从看规模、看门店数，转向看现金流、净利率与周转</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">创始人退场意味着决策语言变了：从「我觉得」变成「报表说话」。对供应链是好事——职业经理人更认数据与合同；但也更硬，压价和账期会谈得更细。我们的应对是把交付准时率、异常响应时效做成能出示的数字，而不是靠关系解释。谁能先拿出一页纸的可靠性证据，谁在新一轮谈判里就占先手。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?__biz=Mzg3OTk2OTU3OA==&amp;mid=2247634570&amp;idx=1&amp;sn=6208da66ab7d549cd289e79ab22c30c2&amp;chksm=ce577ef36d4210d1068dfd29fdafaf73c4551892fb4045044a66cc27f1575554f9d7c73093e5&amp;scene=126&amp;sessionid=1792461287#rd" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">4</div>
-                <div class="news-title">前三季度家具类零售 1306 亿元降 4.7%，建筑装潢材料降 9.7%</div>
+                <div class="news-title">美国90年老牌家具零售商American Home宣布清算，约8周后解散</div>
             </div>
-            <div class="news-meta"><span class="source-tag">国家统计局</span><span>2026-10-19</span></div>
-            <div class="news-summary">国家统计局 10 月 19 日发布数据，2026 年前三季度社会消费品零售总额 370001 亿元、同比增长 1.1%，其中商品零售额 328032 亿元、增长 1.0%，餐饮收入 41969 亿元、增长 2.4%。家居相关品类全线承压：家具类 1306 亿元、同比下降 4.7%，建筑及装潢材料类 874 亿元、下降 9.7%，家用电器和音像器材类 8105 亿元、下降 4.9%。9 月单月家具类 161 亿元、同比下降 3.0%，降幅较前三季度累计有所收窄。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">三个品类一起跌，说明不是某个品类的问题，是「大件、低频、重决策」的消费整体在推迟。但 9 月单月家具降幅收窄到 3.0%、好于累计 4.7%，这是双十一预热和以旧换新叠加的边际改善。要判断这个收窄是真拐点还是促销前置，看 10 月单月数据——如果又掉回 4% 以上，说明只是把需求提前了一个月。</span></div>
-            
-            <a class="read-more" href="https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261019_1965614.html" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">今日家居FurnitureToday</span><span>2026-10-19 16:12</span><span class="source-tag">视频号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">American Home 宣布有序清算、约8周后解散，曾位列 Furniture Today 美国百强第61位</span></li><li><span class="pt-no">2</span><span class="pt-tx">门店从11家收缩到1家仍未续命，直接死因是关税、运费与资金三重压力</span></li><li><span class="pt-no">3</span><span class="pt-tx">美国家居零售端的倒闭潮仍在延续，渠道收缩尚未见底</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">美国零售端在去库存去杠杆，收缩会顺着订单传导到国内工厂：账期变长、小单变多、退货条款变严。我们客户结构里若有类似的中小进口商，要提前把信用额度和预付比例过一遍，别等对方进入清算程序才反应——那时货款基本排在后位。出海不能只盯订单量，要盯对方的资产负债表。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://weixin.qq.com/sph/ANoVCiGAUC" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">5</div>
-                <div class="news-title">敏华控股发中期盈警：预计溢利同比下滑 70%~90%</div>
+                <div class="news-title">祺俊智能家居丨弧度与收口之间，藏着整木定制的生活美学</div>
             </div>
-            <div class="news-meta"><span class="source-tag">搜狐焦点家居（行业周报）</span><span>2026-10-19</span></div>
-            <div class="news-summary">搜狐焦点家居 10 月 19 日行业周报显示，港股软体家居龙头敏华控股（01999.HK）10 月 13 日发布盈利警告，根据未经审核综合财务资料初步评估，截至 2026 年 9 月 30 日止六个月（财年中期，3 月至 9 月），公司权益拥有人应占溢利较上年同期 11.46 亿港元将减少约 70% 至 90%。同一周内，兔宝宝公布北京定制柜环保争议检测结果，两组送检板材甲醛释放量 0.006 与 0.014mg/m³，达 ENF 级；ST 美克控股股东美克集团等三家关联企业被裁定合并重整。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">敏华是功能沙发出口占比最高的龙头之一，它把溢利砍掉 70~90%，说明关税和海运成本的压力已经穿透到最抗打的那一层。这不是需求问题，是「卖得动但不赚钱」。同一周里美克被裁定合并重整、兔宝宝要靠第三方检测自证环保——三件事指向同一个结论：行业正在用利润和资产负债表为过去三年的扩张付账。盯敏华的应对：会不会关店、会不会提价，那才是行业价格的先行指标。</span></div>
-            
-            <a class="read-more" href="https://www.focus.cn/a/1089780472_116082" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">祺俊整木定制</span><span>2026-10-19 11:30</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">整木定制的卖点已经从板材与工艺转到收口精度：通顶柜与护墙齐平交付，弧形柜体承担空间过渡</span></li><li><span class="pt-no">2</span><span class="pt-tx">把收纳、护墙、动线打包成「一体化全案木作」，交付单位从单品变成整套空间，安装与验收都要按空间重算</span></li><li><span class="pt-no">3</span><span class="pt-tx">品牌名已挂上「智能家居」，全文却没有一个智能参数——命名跑在产品前面，是这类企业的常态</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">这条值得记的是交付颗粒度：从卖柜子变成卖一整套空间，报价、安装、验收都得按空间重算，谁的组织还按柜体分工，谁就会在交付上掉链子。名字先挂「智能」不奇怪，行业里普遍是命名跑在产品前面；判断一家企业真做没做智能，别看名字，看它有没有智能模块的采购清单、有没有能对接协议的负责人。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1792381793&amp;ver=7035&amp;signature=jzJGjbsfgCiaVvXiiuZRsk9O*qVCGvWebO0TUyN4nN9pXM7RrVbZN9aQVTfIR6dRfLClLpKE9B82cadrAznLESrw7qY*EYNZwDchIRa73QLcJf0XDzgFfruQQCUOhhoI&amp;new=1" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">6</div>
-                <div class="news-title">顾家 220 亿市值反超欧派，A 股家居「一哥」易主：净利率 9.4% 首超 7.4%</div>
+                <div class="news-title">不是生意难做了，是你赚钱的那套逻辑过期了</div>
             </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · 泛家居圈</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 16 日 A 股收盘，顾家家居总市值达 220 亿元，超越欧派家居，坐上 A 股家居行业市值头把交椅；而 2026 年年初顾家仍落后约 65 亿元，2023 年末欧派还领先超 130 亿元。业绩分化是主因：2026 年上半年欧派营收 59.50 亿元、同比降 27.79%，归母净利润 4.42 亿元、同比降 56.62%，经营<em class="hl">现金流缩水超九成</em>；同期顾家营收 98.75 亿元、同比微增 0.75%，归母净利润 9.26 亿元、同比降 9.31%，净利率 9.4% 首次超过欧派的 7.4%。顾家境外收入占比已达 48.4%，上半年海外收入同比增 19%，首次超过境内收入。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">这不是增速竞赛，是下行周期里的韧性比拼——五年前欧派曾站上千亿市值，如今两家相加只剩四百余亿。欧派的困境是结构性的：定制家居站在装修链条最前端，直接吃新房竣工下滑，橱柜、衣柜两大核心品类跌幅都超 27%；而它的高固定成本模式在收入收缩期反噬，收入降近三成、三项费用只降约 12%，费用率被硬顶上去。顾家靠软体（更贴存量换新）+ 海外 48.4% 对冲。对我们的启示很直接：出海不是锦上添花，是这一轮能不能活下来的分水岭。盯欧派「再创业」改革何时在利润端见效，那是定制赛道见底的信号。</span></div>
-            
-            <a class="read-more" href="https://mp.weixin.qq.com/s?__biz=Mzg3OTk2OTU3OA==&amp;mid=2247634527&amp;idx=1&amp;sn=1de59e16961149bca5d2e9318552a0d1&amp;chksm=cefdc5827a50f79235c23392672dbd28e4b81cf1740ebe308210b445b566aec5510ae271309c" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">泛家居进化论</span><span>2026-10-19 08:30</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">旧公式「业绩＝客流×客单×转化率」建立在市场年年上涨的前提上，市场不涨就只剩互相抢</span></li><li><span class="pt-no">2</span><span class="pt-tx">新公式换成「竞争力＝用户体验×组织效率」，存量时代比的是谁站得稳而不是谁跑得快</span></li><li><span class="pt-no">3</span><span class="pt-tx">AI 是放大器不是发动机，底盘没修好先上工具，只会把原来的混乱加速一遍</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">观点对，但最容易停在口号。真落地只需一句话：把体验和效率各拆成三个能月度取数的指标，否则还是拍脑袋。我们内部可先试——体验端取交付准时率、返修率、复购推荐率；效率端取人均产值、订单周转天数、一次通过率。这六个数字能连续三个月看出趋势，再谈要不要上 AI。顺序反了，就是花钱买热闹。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?__biz=MzkzMzY5MDY1MQ==&amp;mid=2247486253&amp;idx=1&amp;sn=4e8c5445bb7d37557d8fe1074e04a585&amp;chksm=c375c93c566009783d72837b492a64417ff764bfd689c4cb73b08f1ebf0f50a39095dc62d8cc&amp;scene=126&amp;sessionid=1792461277#rd" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
-        <!-- 定制家居 -->
+        <!-- 智能家居 -->
         <div class="category-title">
-            <span>定制家居</span>
-            <span class="en">Custom Home Furnishing</span>
+            <span>📱 智能家居</span>
+            <span class="en">Smart Home</span>
         </div>
+        
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">7</div>
-                <div class="news-title">9 月家具出口同比增 22.1%，机构维持欧派、索菲亚「增持」评级</div>
+                <div class="news-title">苹果终于下场造智能家居：Apple Home Collection 的第二方打法</div>
             </div>
-            <div class="news-meta"><span class="source-tag">中财网</span><span>2026-10-19</span></div>
-            <div class="news-summary">中财网 10 月 19 日数据显示，9 月服装、家具出口同比分别增长 23.9% 和 22.1%，环比增速大幅提升超 10 个百分点；内销端服装类零售同比转正至 1.2%，家具类零售降幅收窄。京东、天猫已同步开启双十一大促，叠加「929 房地产贴息新政」落地，地产后周期情绪回暖。机构研报指出，中美关系缓和带动出口链订单压力缓解，内需托底与外需向好形成共振，维持欧派家居、索菲亚、罗莱生活等「增持」评级，重点指向业绩确定性与分红稳定性兼备的头部企业。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">单月 22.1% 与累计 2.2% 放在一起看，说明 9 月是明显的补库脉冲，不是趋势反转——这一点必须分清，否则会把旺季当拐点。真正值得跟的是「929 贴息新政」能不能把成交转成装修单，以及机构给的「高股息 + 确定性」逻辑会不会让龙头在四季度主动收缩、用份额换利润。盯 10 月出口增速是否回落、双十一家具品类成交。</span></div>
-            
-            <a class="read-more" href="https://www.cfi.cn/p20261019001783.html" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">智能家居Zorro</span><span>2026-10-19 11:37</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">苹果联合 LG 电子与施耐德电气推出 Apple Home Collection，第一次有了自己的智能家居设备线</span></li><li><span class="pt-no">2</span><span class="pt-tx">打法是第二方：标准与设计出自苹果，生产售后交给家居制造伙伴，LG 做锁与摄像头、施耐德做温控</span></li><li><span class="pt-no">3</span><span class="pt-tx">门锁支持 Matter 与 Aliro 标准并本地运行，全系带 Thread 射频，摄像头仍走 HomeKit</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">苹果把「平台商」变成「品牌商」，直接给做锁、做温控的代工企业开了一扇窗，同时把门槛抬到 Matter＋Thread＋本地运行三件套。启发有两条：要做智能配套件，先按这三条选型，别再做私有协议；更重要的是——苹果选择不自建工厂，说明这轮竞争点在标准和设计，不在产能，而这恰好是制造端能接的位置。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1792381793&amp;ver=7035&amp;signature=UYb6E0vLDw7TabjIU--SNX0sOMcvzMcaF9uqCS6N8QGotfrI4MuMBrJjAb0zQKMw3gw26wnPx6c5kx5Qpui9k9v-5woDYl6y2hS4jF9Sc*oG6ICLe*Oylq6WKB8PsLQ-&amp;new=1" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">8</div>
-                <div class="news-title">10 月 19 日家居用品板块跌 2%，顶固集创跌 9.17%</div>
+                <div class="news-title">广交会 AI 爆火：智能家居告别手机遥控，客商排队一小时体验</div>
             </div>
-            <div class="news-meta"><span class="source-tag">东方财富网</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日 10 点 10 分，家居用品板块指数报 45714.09 点、跌幅达 2%，成交 25.52 亿元、<em class="hl-hot">换手率 0.80%</em>。板块内跌幅前五个股为顶固集创报 21.29 元跌 9.17%、海鸥住工报 4.37 元跌 7.22%、松霖科技报 22.69 元跌 6.63%、爱丽家居报 22.28 元跌 6.35%、雅艺科技报 16.05 元跌 6.20%。跌幅居前的多为定制与卫浴配套类中小市值公司，与当日公布的 1-9 月家具类零售同比下降 4.7%、建筑装潢材料下降 9.7% 形成呼应。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">大跌的都不是龙头，而是定制配套、卫浴、家居用品里的中小市值公司——共同点是客户结构里地产工程占比高、账期长。板块跌 2% 而个股跌 6~9%，说明资金在按「地产敞口」重新定价，而不是按行业景气度。对我们的警示：如果客户名单里工程渠道占比超过三成，现在的估值逻辑已经不认规模，只认回款。盯三季报里的应收账款和减值计提。</span></div>
-            
-            <a class="read-more" href="https://finance.eastmoney.com/a/202610193899590913.html" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">盛开的百合9664</span><span>2026-10-19 11:38</span><span class="source-tag">微信公众号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">本届广交会智能家居展区从手机遥控升级为自主感知，靠人体感应与算法自动调温、随人启停</span></li><li><span class="pt-no">2</span><span class="pt-tx">AI 开始学习用户习惯做场景联动，热门展位高峰期排队一小时，海外采购商集中打卡</span></li><li><span class="pt-no">3</span><span class="pt-tx">智能外骨骼、AI 翻译、清洁机器人、机械臂集中亮相，现场拿到大量意向订单</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">展会热度不等于订单质量，但方向值得记：海外采购商正把「能自己判断」当作溢价理由，而不是「能连手机」。报价若还只讲材质和工艺，就落在低维竞争里。可行的加法是给主力品类配一个能现场演的感知场景（柜内湿度联动除湿、门体开合联动灯控），成本可控，比讲参数有效得多。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1792381793&amp;ver=7035&amp;signature=D-lM4YoVw0te8xdKS9F3xvy14hAAIC3gtdNXMKoZ4QCIkmQNmI*-ZAFk*tmLKlsGcb4shA2XYnBi890EqkuKH8yzR*UEswz-5OK5r*RYHkMq0t6OVJTwszTwEgBTjLTf&amp;new=1" rel="noopener noreferrer">阅读原文</a></div>
         </div>
+
+        <!-- 外贸出海 -->
+        <div class="category-title">
+            <span>🚢 外贸出海</span>
+            <span class="en">Export &amp; Overseas</span>
+        </div>
+        
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">9</div>
-                <div class="news-title">两年<em class="hl-hot">至少 7 家</em>上市家居企业易主：半导体、跨境电商背景资本密集进场</div>
+                <div class="news-title">澳大利亚对华铝制门窗双反初裁：10月15日起预缴保证金，最高73.3%</div>
             </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · 泛家居圈</span><span>2026-10-19</span></div>
-            <div class="news-summary">据不完全统计，2024 年至 2026 年已有至少 7 家上市家居企业完成或公告实控人变更，覆盖定制、吊顶、集成灶、软体、家装全赛道。2024 年初盈峰睿和受让顾家家居 29.42% 股份，顾江生家族交出控制权，何剑锋成为实控人；2026 年 4 月半导体背景的初芯微入主皮阿诺，马礼斌通过转让股权、放弃表决权退场；2 月友邦吊顶完成股权过户，明盛智能施其明接盘；7 月浙江美大公告夏氏家族拟转让 29.99% 股权给深圳星蓝图，跨境电商背景的张海政将成新实控人。亚振家居、ST 美克、东易日盛亦已完成或推进控制权变更。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">三重压力同时压到创始人身上：财务端是高负债、商誉减值与股权高质押；治理端是二代接班意愿与能力不足；估值端是股价跌到历史底部，上市平台和全国渠道网络反而成了跨界资本的壳资源。所以这不是零星个案，是行业从增量扩张转入存量出清的标准动作。对我们的意义：接下来两年，渠道和大客户名单会持续「换老板」，原有关系可能一夜清零，也可能带来新的合作窗口。要盯的是跨界资本进来后到底继续做家居，还是把它当融资平台——这决定了未来三年的竞争格局长什么样。</span></div>
-            
-            <a class="read-more" href="https://mp.weixin.qq.com/s?__biz=Mzg3OTk2OTU3OA==&amp;mid=2247634548&amp;idx=1&amp;sn=4ca118a2594df796f2a6f61c94ba2d88&amp;chksm=ce5fa94c3dcdd7479719a2f21f5d6adb8aa086f1cc4fbfe2d2fd35d34305170b77bbc46076b1" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- 智能家居 -->
-        <div class="category-title">
-            <span>智能家居</span>
-            <span class="en">Smart Home</span>
+            <div class="news-meta"><span class="byline">今日家居FurnitureToday</span><span>2026-10-19 14:24</span><span class="source-tag">视频号</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">澳方自10月15日起以保证金形式征收临时双反税，不合作企业反倾销70.4%叠加反补贴2.9%，合计最高73.3%</span></li><li><span class="pt-no">2</span><span class="pt-tx">6家应诉企业税率0至51.6%，深圳中盈建科为0，税率高低直接取决于是否应诉与配合程度</span></li><li><span class="pt-no">3</span><span class="pt-tx">申请方委托检测8件中国门窗样品，7件未达当地标准，低价与不合规成为立案抓手</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">这条最值钱的不是73.3%，而是应诉与不应诉差出50个百分点。反倾销不是天灾，是可以管理的成本——配合调查、提交成本数据的企业能拿到低税率。我们该把「应诉能力」当作出海基础设施来建：平时按对方问卷口径留档成本结构与出口价格台账，立案时才能两周内交卷。7/8 不达标也提醒我们，标准合规比价格更容易被抓，出口前送检不能省。</span></div>
+            <div class="card-foot"><a class="read-more" href="https://weixin.qq.com/sph/A9MgigEUKZ" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
         <div class="news-card">
             <div class="card-header">
                 <div class="number-badge">10</div>
-                <div class="news-title">阳江国补新增四大品类：全屋智能、智能清洁首次纳入，单件最高补 1500 元</div>
+                <div class="news-title">宁波市贸促会经贸预警快报第99期：欧盟创新法案、英国再生含量新规、越南聚酯长丝终裁</div>
             </div>
-            <div class="news-meta"><span class="source-tag">阳江广播电视台（阳江市商务局）</span><span>2026-10-19</span></div>
-            <div class="news-summary">阳江市商务局 10 月 19 日介绍，2026 年阳江市家电国补新增品类补贴活动已落地，本轮覆盖十大品类、近三十小类产品，其中二十小类为新增，扩围方向为全屋智能设备、智能清洁设备、烟机灶具、厨房家电四大类，净水器、洗碗机、空气炸锅、扫地机器人、<em class="hl">智能家庭服务器</em>均纳入。补贴标准为扣除各环节优惠后最终销售价格的 15%，每位消费者每类可补 1 件、每件不超过 1500 元，活动周期为 2026 年 10 月 1 日至 12 月 31 日，通过云闪付或「粤焕新」小程序申领。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">补贴目录扩到「智能家庭服务器」，这是信号——政策开始把中枢/网关当独立品类来补，而不只是补终端。对做全屋智能方案的企业是直接利好：中枢进目录，整装套餐里可以把网关和主机打包进补贴核算。要盯两件事：本省市目录何时跟进这四类，以及「智能家庭服务器」的认定标准（谁按什么口径算一台）——标准模糊的地方最容易套补，也最容易在审计后收紧。</span></div>
-            
-            <a class="read-more" href="https://news.qq.com/rain/a/20261019A0CBBW00" rel="noopener noreferrer">阅读原文</a>
+            <div class="news-meta"><span class="byline">宁波市贸促会</span><span>2026-10-19</span><span class="source-tag">公网媒体</span></div>
+            <ol class="point-list"><li><span class="pt-no">1</span><span class="pt-tx">欧盟推出《欧洲创新法案》，测算每年释放约102亿欧元额外融资、为企业增利约259.2亿欧元</span></li><li><span class="pt-no">2</span><span class="pt-tx">英国明确2027年4月起消费前塑料废料不再计入塑料包装税30%再生含量门槛，仅认消费后再生料</span></li><li><span class="pt-no">3</span><span class="pt-tx">越南对涉华聚酯长丝纱线反倾销日落复审终裁，中国税率3.36%至17.45%，10月16日起执行五年</span></li></ol>
+            <div class="insight-box"><span class="insight-label">📌 总结：</span><span class="insight-text">这类预警快报的价值在提前量。英国那条时间点最硬——2027年4月，做塑料包装、板材饰面的出口企业现在就要核再生料来源，因为「消费前废料不算」等于让不少现有供应商证书作废。建议把部委与贸促会预警做成固定订阅源每周扫一次，凡出现2027、2028生效日期的条款，直接进明年合规待办，别等客户来问。</span></div>
+            <div class="card-foot"><a class="read-more" href="http://www.ccpitnb.org/art/2026/10/19/art_5590_639029.html" rel="noopener noreferrer">阅读原文</a></div>
         </div>
 
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">11</div>
-                <div class="news-title">甘肃宕昌出台适老化智能家居补贴：补 30%、<em class="hl-hot">每户最高 2 万元</em>，覆盖 48 类产品</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · 宕昌县民政局</span><span>2026-10-19</span></div>
-            <div class="news-summary">宕昌县民政局 10 月 19 日公告，对常住县内、有居家适老改造需求的 <em class="hl-hot">60 周岁及以上</em>老年人家庭发放适老化智能家居购置补贴，范围为《甘肃省消费品以旧换新适老化智能家居产品补贴目录（2026 年度）》内的 48 类产品，含电动轮椅、<em class="hl">跌倒监测雷达</em>、生命体征监测雷达、智能防干烧灶具、适老化智能马桶盖、智能升降吊柜等。补贴比例不高于实际销售价格的 30%，每户补贴总额最高 2 万元，一户一补、<em class="hl">先报先补</em>，执行至 2026 年 12 月 31 日，材料费、装修费、人工费不予补贴。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">30% 的补贴比例、2 万元单户上限，比家电国补（15%、1500 元）高一个量级——因为适老改造是「一户一策」的工程，不是单品。这对整装和部品企业的含义很直接：适老不是卖一个扶手，是打包卖含雷达、智能马桶、升降柜的方案，客单价能做到家电的十倍以上。要盯省级目录里 48 类产品有没有我们的品类，以及「材料费、装修费、人工费不予补贴」这条——施工利润得另算。</span></div>
-            
-            <a class="read-more" href="http://mp.weixin.qq.com/s?__biz=MzI1MzExMTY2MA==&amp;mid=2247508900&amp;idx=1&amp;sn=fe8d3ee73d15ca05d02a5c9d72d0c185" rel="noopener noreferrer">阅读原文</a>
-        </div>
 
-        <!-- 发热新材料 -->
-        <div class="category-title">
-            <span>发热新材料</span>
-            <span class="en">Heating New Materials</span>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">12</div>
-                <div class="news-title">西宁发布<em class="hl">室内加热器</em>等 <em class="hl-hot">6 种产品</em>市级监督抽查细则，取暖季前收紧</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">西宁市市场监督管理局</span><span>2026-10-19</span></div>
-            <div class="news-summary">西宁市市场监督管理局 10 月 19 日通告，依据《产品质量监督抽查管理暂行办法》，组织编制并发布 2026 年民生领域 6 种产品质量市级监督抽查实施细则，其中包括《室内加热器产品质量监督抽查实施细则（2026 年版）》，另含食品用塑料包装容器、床上用品（被子）、电动自行车乘员头盔、机动车冷却液、汽车风窗玻璃清洗液。旧版同种产品质量监督抽查实施细则同时废止，各县区开展监督抽查工作时可参照执行。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">细则选在取暖季前的 10 月中下旬发布，时间点本身就是信号：抽检会集中在 11 月至次年 1 月的销售高峰。室内加热器是小家电里安全投诉最集中的品类之一，抽查一旦不合格，直接影响渠道上架。对做发热元件和整机的企业，现在的动作不是等抽检，而是把 2026 版细则的检测项目与自家送检报告逐项对一遍——旧版废止意味着此前的报告口径可能不再适用。</span></div>
-            
-            <a class="read-more" href="https://scjgj.xining.gov.cn/sy/tzgg/202610/t20261019_265002.html" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">13</div>
-                <div class="news-title">单县石墨烯电热膜：发热碳浆<em class="hl-hot">方阻 9Ω 以上</em>、<em class="hl-hot">耐温 180℃</em>，年产能 <em class="hl-hot">600 万平方米</em></div>
-            </div>
-            <div class="news-meta"><span class="source-tag">腾讯新闻 · 地方产业报道</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日报道，山东单县多米石墨烯科技有限公司的发热碳浆经 <em class="hl-hot">2000 多次实验</em>，方阻达到 9 欧姆以上，电热辐射转换效率赶超国际同类水平，耐温极限达 180℃，打破国外技术垄断；模块化地暖、电热膜上墙产品、分布电容回收装置等多项技术填补国内空白。其年产 600 万平方米石墨烯电热膜项目 2020 年入选山东省优选项目，2023 年年产 100 万平方米激光蚀刻柔性电路板项目获评山东省重大项目，产品已进入三星、LG 供应链。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">「方阻 9Ω、耐温 180℃」是石墨烯电热膜能否进工程渠道的硬门槛——方阻决定功率一致性，耐温决定能不能做上墙和地暖复合。国产供应链打通后，最直接的变化是进口膜的价格锚失效。对采购方，这意味着有条件谈价，但也意味着市场上会迅速出现大量「参数接近、批次不稳」的仿品。要盯这家及同类企业能否把批次一致性做出来，以及三星、LG 的验厂标准会不会成为行业事实标准。</span></div>
-            
-            <a class="read-more" href="https://news.qq.com/rain/a/20261019A039YZ00" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- 家居海外出口 -->
-        <div class="category-title">
-            <span>家居海外出口</span>
-            <span class="en">Home Furnishing Export</span>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">14</div>
-                <div class="news-title">乐从家居出海提速：顺联非洲外商服务站揭牌，一季度客源国增至 155 个</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">腾讯网 · 佛山乐从</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日报道，顺联家居汇·南区设立非洲外商服务站，常态化对接非洲、印度、中东、东南亚采购资源；罗浮宫家居秋季国际采购节于 10 月 15 日至 11 月 4 日开启，会期与广交会叠合。罗浮宫家居集团总裁此前介绍，一季度客源国已攀升至 155 个、较此前新增 45 个、增幅 44%。乐从供销集团依托辉煌供销总部打造约 10 万平方米家居出口基地即将启幕，打通设计、打样、生产到安装交付全链路。乐从现有 180 多座家具商城、商户超 1 万家、制造企业超 2600 家，年促成交易额超 800 亿元。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">服务站、采购节、外贸基地三件事同时做，本质是把「卖场」改造成「外贸服务商」——过去工厂出海要自建团队和渠道，现在可以在本地把订单接住。这解决的正是中小工厂最痛的一环：不是没产品，是没能力接海外小单。对我们的启示是渠道形态在变：如果还在等外贸公司下单，议价权会持续下滑。盯乐供基地首批入驻率和订单结构（代工还是自有品牌）。</span></div>
-            
-            <a class="read-more" href="https://new.qq.com/rain/a/20261019A0C68K00" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">15</div>
-                <div class="news-title">家具跨境电商出口爬坡：蚌埠一家企业四年从 260 万美元做到 1500 万美元</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">蚌埠新闻网</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日报道，蚌埠市蚌山区一家 2021 年注册的电商企业以亚马逊等平台为主，主营家具跨境销售、在欧美市场布局电竞桌椅，出口额从 2022 年的 260 万美元增至 2023 年 830 多万美元、2025 年突破 1000 万美元，2026 年有望突破 1500 万美元。蚌山区 2026 年 1-8 月新增实绩外贸企业 33 家、数量居全市第一，重点支持企业布局海外仓、利用第三方平台和自建站拓展市场。同期无锡外贸增速 31.9%，当地木制品家具企业 1-9 月出口额同比增长 21%。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">四年近 6 倍的增长来自「单一品类 + 单一平台 + 海外仓」这套最朴素的组合，而不是品牌力——这恰恰说明家具出海的门槛在下降、窗口还在。但门槛下降意味着同质化会更快到来。对已经在做的企业，真正的护城河不在选品，在海外仓的周转率和售后成本。盯两个数：亚马逊家具类目的佣金与仓储费变化，以及东南亚海外仓租金走势。</span></div>
-            
-            <a class="read-more" href="https://www.bbnews.cn/bengbu/2026/10-19/3DjB8KGD.html" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- BBC业务 -->
-        <div class="category-title">
-            <span>BBC业务</span>
-            <span class="en">Real Estate + Decoration B2B2C</span>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">16</div>
-                <div class="news-title">二手房网签 61746 万平方米增 10.7%，大家居需求从楼盘挪进小区</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">微信公众号 · 家居新范式</span><span>2026-10-19</span></div>
-            <div class="news-summary">国家统计局 10 月 19 日发布三季度数据：前三季度房地产开发投资下降 20.6%、房屋新开工面积下降 24.9%、竣工面积下降 25.1%、新建商品房销售面积 56483 万平方米下降 13.2%；同期二手房交易网签面积 61746 万平方米、同比增长 10.7%，在商品房成交中占比持续超过 50%。消费端，社零总额 370001 亿元增长 1.1%，家具类 1306 亿元下降 4.7%，建筑及装潢材料类 874 亿元下降 9.7%，而服务零售额增长 5.0%；居民人均居住支出 4753 元、占消费支出 21.3%，增速 1.9%。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">新房链条全线两位数下滑，二手房网签却涨 10.7% 并稳定过半——这不是「行业下滑」，是需求入口从售楼处挪到了二手房合同和小区门禁。对整装和渠道最实际的含义：按楼盘户型排产、跟着卖场档期促销这套打法，接不到现在的碎单。谁先把测量、拆除、局改、适老串起来，谁才接得住。盯两个指标：房龄 15 年以上住宅的改造渗透率，以及局改订单在整装企业营收里的占比。</span></div>
-            
-            <a class="read-more" href="http://mp.weixin.qq.com/s?__biz=Mzk0MTE5NTgzMw==&amp;mid=2247906651&amp;idx=1&amp;sn=d590cc11ef005b00a1ce700bbfa7c574" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">17</div>
-                <div class="news-title">国新办定调房地产「控增量、去存量、优供给」，家居消费仍未同步回暖</div>
-            </div>
-            <div class="news-meta"><span class="source-tag">中国新闻网（国新办发布会）</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日国新办发布会介绍前三季度国民经济运行情况：GDP 同比增长 4.6%，三季度增长 4.5%、比二季度回升 0.2 个百分点。国家统计局新闻发言人表示，房地产已进入「控增量、去存量、优供给」阶段，建议少关注开发投资、多关注成交、库存和价格。9 月末新建商品房待售面积同比下降 1.5%、待售三年以下面积下降 5.0%；9 月一线城市新建商品住宅价格连续两个月环比上涨、二手住宅价格连续七个月环比上涨。发布会同时指出，与房地产联系较紧密的家居消费仍然偏弱。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">官方把观察口径从「开发投资」改到「成交、库存、价格」，等于承认新房开发这条线不再是判断依据。但发布会同时点明「住房交易的改善尚未在家居消费同步体现」——这句话是给我们行业的直接提示：成交到装修之间有明显时滞，且装修预算受收入预期约束。所以四季度别指望成交回暖立刻变订单，要看 2027 年一季度二手房成交能否转化成局改和翻新单。</span></div>
-            
-            <a class="read-more" href="https://m.chinanews.com/wap/detail/cht/zw/jw693105.shtml" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- 轻量化合金新材料 -->
-        <div class="category-title">
-            <span>轻量化合金新材料</span>
-            <span class="en">Lightweight Alloy Materials</span>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">18</div>
-                <div class="news-title">辽宁象屿铝业航空航天订单激增，特种材料<em class="hl-hot">订单超 3000 吨</em></div>
-            </div>
-            <div class="news-meta"><span class="source-tag">《企业界》杂志社（转载）</span><span>2026-10-19</span></div>
-            <div class="news-summary">10 月 19 日报道，辽宁象屿铝业一季度产值同比增长 16%，高端产品订单量大幅攀升，辽阳、营口两大基地满负荷生产，辽阳基地 23 条挤压生产线连续作业。航空航天用铝订单大幅增长，特种材料订单量超 3000 吨，包括为沈飞民机提供机身框架、机身地板等关键结构件，以及为拓荆科技提供高端铝材。企业投资近 8 亿元推进产线整合与高端专线建设，建成后辽阳基地挤压型材年产能将达 25 万吨、年产值突破 90 亿元，2026 年公司产值有望突破 500 亿元。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">3000 吨特种材料订单、25 万吨产能、90 亿产值——这组数字说明工业材的高端段正被头部吃掉，而且是从建筑型材产线改造过去的。23 条挤压线满负荷，意味着通用产能向高端迁移，建筑料供给会跟着收紧。这对判断铝价和加工费有直接意义：高端订单越饱满，通用型材的交期和报价就越没得谈。盯辽阳高端专线投产时间，以及建筑型材加工费是否开始反弹。</span></div>
-            
-            <a class="read-more" href="https://www.toutiao.com/article/7698311427177677352" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <div class="news-card">
-            <div class="card-header">
-                <div class="number-badge">19</div>
-                <div class="news-title">福建鼎信钛合金项目过节能审查：<em class="hl-hot">投资 28 亿元</em>，达产<em class="hl-hot">年产 10 万吨</em></div>
-            </div>
-            <div class="news-meta"><span class="source-tag">福建省工业和信息化厅</span><span>2026-10-19</span></div>
-            <div class="news-summary">福建省工业和信息化厅 10 月 19 日公开对福建鼎信实业有限公司钛合金及配套项目节能报告的审查意见，原则同意通过。项目新建 1 条钛合金材料生产线，新增压制机、真空自耗炉、锻压机组、真空电子束熔炼 EB 炉等主要设备，备案总投资 28 亿元，达产后新增年产 <em class="hl-hot">10 万吨钛合金</em>材料的生产能力，拟于 2028 年 12 月建成投产。项目达产后新增年综合能源消费量 104034.4 吨标准煤，年碳排放量 320975.27 吨二氧化碳，钛锭单位产品综合能耗优于国标 1 级能效指标。</div>
-            
-            <div class="insight-box"><span class="insight-label">💡 分析点评：</span><span class="insight-text">28 亿、10 万吨、2028 年底——这是轻量化材料的产能预埋，抢的是三年后新能源汽车和消费电子的结构件需求。钛合金的成本瓶颈一直在海绵钛和熔炼能耗，这个项目把能耗指标做到国标 1 级，等于拿到成本竞争的入场券。对我们的意义在替代关系：钛合金价格往下走，会先从高端铝件的场景里切走一部分订单。盯海绵钛价格和项目实际开工时间，比盯它何时投产更有用。</span></div>
-            
-            <a class="read-more" href="https://gxt.fujian.gov.cn/zwgk/jsxm/xmhz/202610/t20261019_7237576.htm" rel="noopener noreferrer">阅读原文</a>
-        </div>
-
-        <!-- 社媒热榜 -->
-        <div class="category-title">
-            <span>社媒热榜</span>
-            <span class="en">Social Hot List</span>
-        </div>
-        <p class="section-note">抖音 / 小红书 7 条（时间窗 2026-10-17 ~ 2026-10-20，全量 167 条中筛出）</p>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#111827">🎵</div>
-                <div class="news-title">全民进入纯过日子时代 装修哪些买品牌哪些不买品牌</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#111827;color:#fff">🎵 抖音</span><span class="source-tag">嘉伟室内设计</span><span>2026-10-19</span></div>
-            <div class="card-eng"><span>👍 4266</span></div>
-            <a class="read-more" href="https://www.douyin.com/video/7698343744860441910" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#111827">🎵</div>
-                <div class="news-title">洗手盆怎么选不踩坑，认真看完这条视频不出错</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#111827;color:#fff">🎵 抖音</span><span class="source-tag">海哥—用心讲装修</span><span>2026-10-17</span></div>
-            <div class="card-eng"><span>👍 2298</span></div>
-            <a class="read-more" href="https://www.douyin.com/video/7697474499221982514" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#111827">🎵</div>
-                <div class="news-title">厨房这5处一改，方寸之地也能装下四季三餐！</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#111827;color:#fff">🎵 抖音</span><span class="source-tag">装修帮</span><span>2026-10-17</span></div>
-            <div class="card-eng"><span>👍 1144</span></div>
-            <a class="read-more" href="https://www.douyin.com/video/7697481577684536618" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#111827">🎵</div>
-                <div class="news-title">厨房选购水槽 记住这几点就够了 后期入住实用美观不踩坑</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#111827;color:#fff">🎵 抖音</span><span class="source-tag">海哥—用心讲装修</span><span>2026-10-18</span></div>
-            <div class="card-eng"><span>👍 1110</span></div>
-            <a class="read-more" href="https://www.douyin.com/video/7697845357149064499" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#111827">🎵</div>
-                <div class="news-title">别再抱怨卧室小了，试试把床抬高，比大卧室住得还舒服！</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#111827;color:#fff">🎵 抖音</span><span class="source-tag">装修帮</span><span>2026-10-18</span></div>
-            <div class="card-eng"><span>👍 1086</span></div>
-            <a class="read-more" href="https://www.douyin.com/video/7697906154587917618" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#FF2442">📕</div>
-                <div class="news-title">9m…又被哆啦a梦的桌面收纳柜硬控啦～</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#FF2442;color:#fff">📕 小红书</span><span class="source-tag">奇木舍</span><span>2026-10-19</span></div>
-            <div class="card-eng"><span>👍 9</span></div>
-            <a class="read-more" href="https://www.xiaohongshu.com/explore/6ad50639000000002203da61" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#FF2442">📕</div>
-                <div class="news-title">被夸爆的阿童木收纳盒！也太帅了叭~谁懂啊！</div>
-            </div>
-            <div class="news-meta"><span class="source-tag source-tag-platform" style="background:#FF2442;color:#fff">📕 小红书</span><span class="source-tag">奇木舍</span><span>2026-10-19</span></div>
-            <div class="card-eng"><span>👍 5</span></div>
-            <a class="read-more" href="https://www.xiaohongshu.com/explore/6ad5ff35000000002a005ad6" rel="noopener noreferrer">看原视频 / 笔记</a>
-        </div>
-
-        <!-- 视频号动态 -->
-        <div class="category-title">
-            <span>视频号动态</span>
-            <span class="en">WeChat Channels</span>
-        </div>
-        <p class="section-note">视频号 8 条（T-1 2026-10-19，全量 11 条中筛出）· 本地工具未回传可点击链接，可按账号名在视频号内检索</p>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">君悦 | 酒水Mini吧壁龛 MAG-G极大师原创 意大利设计师丹尼尔 将意式奢享的仪式感 融入客厅的精神角落</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">玛格Bin哥</span>
-                <span>2026-10-19 16:28</span>
-                <span>👍 122 · 🔁 178 · 💬 17</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/A3ga0tSvMq" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">154起官司、1.09亿涉案额：江山欧派的诉讼账本透露了什么行业信号？</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">亚太家居网</span>
-                <span>2026-10-19 12:00</span>
-                <span>👍 24 · 🔁 92 · 💬 5</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/AbHzrRxkyR" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">美国90年老牌家具零售商American Home宣布有序清算，约8周后解散。它曾位列《Furniture Today》Top 100第61位，从11家店缩到1家，最终没扛住关税、运费和资金压力</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">今日家居FurnitureToday</span>
-                <span>2026-10-19 16:12</span>
-                <span>👍 10 · 🔁 79 · 💬 2</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/ANoVCiGAUC" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">澳大利亚对中国铝制门窗作出双反初裁，10月15日起预缴保证金，最高73.3%，6家应诉企业0至51.6%。此前申请方委托测试8件中国门窗样品，7件未达当地标准。低价加不合规，正成为建材出海的硬伤！</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">今日家居FurnitureToday</span>
-                <span>2026-10-19 14:24</span>
-                <span>👍 6 · 🔁 39 · 💬 1</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/A9MgigEUKZ" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">10月19日早报:出海经·印度新局10.23等你来|乐活科技挂牌新三板|居然智家控股股东73.86%持股被冻结|澳洲对中国铝门窗征最高73.3%关税等</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">今日家居FurnitureToday</span>
-                <span>2026-10-19 11:26</span>
-                <span>👍 6 · 🔁 29 · 💬 1</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/A60jFB95EO" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">欧派家居回购前夜：66%控股权下的治理信号与机构低配现实</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">亚太家居网</span>
-                <span>2026-10-19 17:30</span>
-                <span>👍 3 · 🔁 9 · 💬 6</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/Aagz4sbp0R" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">高端品牌研习社私董会走进皇派门窗。 企业家同场深度战略研讨，拆解高端品牌实战打法，跳出行业看增长，在思想碰撞里找到破局方向</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">庆哥品牌观</span>
-                <span>2026-10-19 17:20</span>
-                <span>👍 9 · 🔁 4 · 💬 0</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/A04MMYTFQ2" rel="noopener noreferrer">看原视频</a>
-        </div>
-
-        <div class="news-card social-card">
-            <div class="card-header">
-                <div class="platform-badge" style="background:#07C160">📺</div>
-                <div class="news-title">梵客接盘两处大店：“千年老二”能否跑通单城30亿模型？</div>
-            </div>
-            <div class="news-meta">
-                <span class="source-tag source-tag-platform" style="background:#07C160;color:#fff">📺 视频号</span>
-                <span class="source-tag">亚太家居网</span>
-                <span>2026-10-19 20:30</span>
-                <span>👍 3 · 🔁 1 · 💬 0</span>
-            </div>
-            <a class="read-more" href="https://weixin.qq.com/sph/AeGtXLo8PE" rel="noopener noreferrer">看原视频</a>
-        </div>
   <footer>
     <p>© 2026 AI助手 · 行业日报 · 每日行业快报</p>
     
-    <p>本期共 34 条 · 8 个业务条线 + 社媒热榜 7 条 + 视频号 8 条 · 生成于 2026/10/20 10:02:05</p>
+    <p>本期共 10 条 · 3 个板块（定制家居 / 智能家居 / 外贸出海） · 生成于 2026/10/20 15:49:50</p>
     
     <p class="disclaimer">免责声明：本报告内容均来源于公开网络，仅供参考学习，不构成任何投资建议。文中观点仅代表作者个人立场，不代表本平台观点。如有版权问题，请联系删除。</p>
   </footer>
