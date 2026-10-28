@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI助手 · 行业日报 | 2026年10月28日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#4361ee; --primary-light:#eef2ff;
+    --bg:#f4f6f9; --card-bg:#ffffff;
+    --text-main:#1f2937; --text-sub:#6b7280; --text-light:#9ca3af;
+    --insight-bg:#f8fafc; --insight-border:#e2e8f0;
+    --impact-bg:#fff7ed; --impact-text:#c2410c;
+    --hot:#D64545; --line:#e5e7eb;
+    --radius:12px;
+    --shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03);
+    --shadow-hover:0 10px 15px -3px rgba(0,0,0,.08), 0 4px 6px -2px rgba(0,0,0,.04);
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background-color:var(--bg); color:var(--text-main);
+    line-height:1.6; padding-bottom:40px; -webkit-font-smoothing:antialiased;
+  }
+
+  /* Header */
+  header{
+    text-align:center; padding:40px 20px;
+    background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%);
+    color:#fff; border-radius:0 0 24px 24px; margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(67,97,238,.3);
+  }
+  header h1{font-size:28px; font-weight:900; margin-bottom:8px; letter-spacing:1px;}
+  header .date{font-size:16px; opacity:.9; font-weight:500;}
+  header .window{
+    display:inline-block; margin-top:10px; padding:3px 12px;
+    font-size:12.5px; opacity:.9; border-radius:999px; background:rgba(255,255,255,.16);
+  }
+
+  .container{max-width:800px; margin:0 auto; padding:20px;}
+
+  /* Category Title */
+  .category-title{
+    display:flex; align-items:center; margin:40px 0 20px;
+    font-size:20px; font-weight:800; color:var(--text-main);
+  }
+  .category-title::before{
+    content:""; display:block; width:6px; height:24px;
+    background-color:var(--primary); border-radius:3px; margin-right:12px;
+  }
+  .category-title .en{
+    margin-left:auto; font-size:13px; color:var(--text-light);
+    font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  }
+
+  /* News Card */
+  .news-card{
+    background:var(--card-bg); border-radius:var(--radius);
+    padding:24px; margin-bottom:20px; box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid rgba(0,0,0,.02); position:relative; overflow:hidden;
+  }
+  .news-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-hover);}
+
+  .card-header{display:flex; align-items:flex-start; margin-bottom:12px;}
+  .number-badge{
+    background-color:var(--primary); color:#fff; width:28px; height:28px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:15px; flex-shrink:0; margin-right:12px; margin-top:2px;
+    box-shadow:0 2px 4px rgba(67,97,238,.3); font-variant-numeric:tabular-nums;
+  }
+  .news-title{font-size:17px; font-weight:700; line-height:1.4; color:var(--primary); flex:1;}
+
+  .news-meta{
+    font-size:13px; color:var(--text-light); margin-bottom:12px;
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  }
+  .source-tag{background-color:#f3f4f6; padding:2px 8px; border-radius:4px; font-size:12px;}
+  /* 跨域标记：只表示「这条内容同时沾定制和智能」，不是板块 */
+  .cross-chip{background-color:#fff7ed; color:#c2410c; border:1px solid #fed7aa;
+   padding:1px 7px; border-radius:4px; font-size:12px; font-weight:600;}
+
+  .card-eng{
+    display:flex; flex-wrap:wrap; gap:4px 14px; font-size:12.5px;
+    color:var(--text-light); margin:-4px 0 12px; font-variant-numeric:tabular-nums;
+  }
+  .card-eng span{white-space:nowrap;}
+
+  .news-summary{color:var(--text-sub); font-size:15px; margin-bottom:16px; text-align:justify;}
+
+  /* Insight & Impact */
+  .insight-box{
+    background-color:var(--insight-bg); border:1px solid var(--insight-border);
+    border-radius:8px; padding:12px 16px; margin-bottom:10px; font-size:14px;
+  }
+  .insight-label{font-weight:700; color:var(--text-main); margin-right:6px;}
+  .insight-text{color:var(--text-sub);}
+
+  .impact-box{
+    background-color:var(--impact-bg); border-radius:8px; padding:12px 16px;
+    font-size:14px; color:var(--impact-text); display:flex; align-items:flex-start;
+  }
+  .impact-icon{margin-right:8px; font-weight:700;}
+
+  /* 简介卡：要点列表 / 作者行 / 本地存档标记 */
+  .byline{color:var(--text-main); font-weight:600;}
+  .point-list{list-style:none; margin:0 0 14px; padding:0;}
+  .point-list li{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:14.5px; color:var(--text-sub); line-height:1.62;
+    padding:6px 0; border-bottom:1px dashed #eef0f4;
+  }
+  .point-list li:last-child{border-bottom:0;}
+  .pt-no{
+    flex:0 0 20px; height:20px; margin-top:2px; border-radius:50%;
+    background:#eef2ff; color:var(--primary); font-size:12px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-variant-numeric:tabular-nums;
+  }
+  .pt-tx{flex:1;}
+  .card-foot{display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px;}
+  .card-foot .read-more{margin-top:0;}
+  .asset-chip{
+    font-size:12px; color:#0f766e; background:#ecfdf5; border:1px solid #d1fae5;
+    padding:4px 9px; border-radius:6px; white-space:nowrap;
+  }
+
+  /* 主轴专区 */
+  .axis-title::before{background-color:#c2410c;}
+  .axis-title{color:#9a3412;}
+  .axis-title .en{color:#fb923c;}
+  .axis-card{border-left:4px solid #f97316;}
+  .axis-badge{background-color:#f97316; box-shadow:0 2px 4px rgba(249,115,22,.35);}
+
+  .hl{color:#3a0ca3; font-weight:700; font-style:normal;}
+  .hl-hot{color:var(--hot); font-weight:700; font-style:normal;}
+
+  /* 社媒热榜 */
+  .section-note{
+    font-size:12.5px; color:var(--text-light); margin:-10px 0 14px; padding-left:18px;
+  }
+  .platform-badge{
+    color:#fff; width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; flex-shrink:0; margin-right:12px; margin-top:2px;
+    box-shadow:0 2px 4px rgba(0,0,0,.18);
+  }
+  .social-card .news-title{font-size:15.5px; font-weight:600; color:var(--text-main);}
+  .source-tag-platform{font-weight:600;}
+
+  /* Link Button */
+  .read-more{
+    display:inline-flex; align-items:center; margin-top:16px;
+    color:var(--primary); text-decoration:none; font-size:14px; font-weight:600;
+    padding:6px 12px; border-radius:6px; background-color:var(--primary-light);
+    transition:background-color .2s;
+  }
+  .read-more:hover{background-color:#dbe4ff;}
+  .read-more::after{content:'→'; margin-left:6px; transition:transform .2s;}
+  .read-more:hover::after{transform:translateX(3px);}
+
+  /* Footer */
+  footer{
+    text-align:center; margin-top:50px; color:var(--text-light); font-size:13px;
+    border-top:1px solid var(--line); padding-top:30px;
+  }
+  .disclaimer{max-width:600px; margin:10px auto 0; font-size:12px; line-height:1.5; opacity:.8;}
+
+  @media (max-width:600px){
+    .container{padding:12px;}
+    header{padding:30px 15px; margin-bottom:20px;}
+    header h1{font-size:24px;}
+    .news-card{padding:20px;}
+    .news-summary{font-size:14.5px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI助手 · 行业日报</h1>
+  <div class="date">2026年10月28日 星期三</div>
+  
+</header>
+<div class="container">
+
+        <!-- 定制家居 -->
+        <div class="category-title">
+            <span>🏠 定制家居</span>
+            <span class="en">Custom Home Furnishing</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">1</div>
+                <div class="news-title">索菲亚三季报：前三季营收 53.22 亿元降 24.06%，归母净利 1.70 亿元降 75.09%</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">财中社 / 新浪财经</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月 27 日晚，索菲亚（002572）公布 2026 年三季报：前三季度营业收入 53.22 亿元、同比下降 24.06%，归母净利润 1.70 亿元、同比下降 75.09%，扣非归母净利润 2.52 亿元、同比下降 65.0%，经营活动现金流净额 4.31 亿元、同比增长 206.4%。单看第三季度，营业收入 19.45 亿元、同比下降 20.83%，归母净利润 1.08 亿元、同比下降 70.21%，扣非 1.3 亿元、同比下降 55.5%。分品牌看，索菲亚品牌 47.74 亿元、米兰纳 2.29 亿元；分渠道看，整装渠道 11.19 亿元，海外渠道 1.10 亿元、同比增长 91.49%。截至三季度末，公司货币资金 8.36 亿元，较上年末的 12.34 亿元减少 32.27%，总资产 126.81 亿元、较上年末下降 7.0%。当日收盘 7.19 元、跌 2.97%，总市值 69.24 亿元，市净率仅 1.02 倍，年内股价跌 43.87%。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这份报表里最值得盯的不是 -75% 的净利，而是两个反向数字：经营现金流 +206.4%、海外渠道 +91.49%。现金流大增靠的是压应收、砍费用（管理费用降 16.30%），说明它在主动&quot;缩表保命&quot;；海外 +91% 说明高端出海这条路它跑通了。但货币资金从 12.34 亿掉到 8.36 亿、市净率 1.02 倍，意味着市场已经把它当资产而不是成长股定价。要盯四季度：海外 1.1 亿的体量还太小，撑不住 53 亿的盘子，主业能不能止跌才是关键。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7701322827567252022/" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">2</div>
+                <div class="news-title">周忠：定制家居真正的对手不是同行，兔宝宝乡镇店已开 3480 家、合作 4 万家地方家具厂</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">泛家居圈·周忠评论（公众号）</span><span>2026-10-27</span></div>
+            <div class="news-summary">家居行业观察人士周忠在最新评论中提出：定制家居十多年来从 799 打到 499 的价格战，真正的对手不是同行，而是贝壳、京东、顾家、兔宝宝这类跨界者。他给出的判断依据是四家各自的切入口：贝壳卡住流量入口，手里有刚签完二手房合同的业主，定制品牌怕的不是柜子做得好不好，而是&quot;有装修需求的客人压根没来你店里&quot;；京东用 SKU 化把板材等级、投影面积、五金品牌全部明码标价，打破价格不透明的软肋；顾家以软体带定制，顾客选了沙发床垫后十有八九会顺手选柜子；兔宝宝则是渠道下沉，截至今年上半年乡镇店达 3480 家、全国门店 7000 多家，装饰材料门店 5918 家（其中 4000 余家可提供&quot;板材定制+&quot;服务）、定制家居专卖店 1667 家，并合作了 4 万多家地方家具厂。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这个判断最狠的一点是把&quot;竞争&quot;从产品层拉到了入口层——贝壳截的是客流，京东破的是定价，顾家抢的是搭配场景，兔宝宝吃的是下沉产能，四家没有一家在跟你比柜子做得好不好。这意味着定制企业真正的护城河不是工艺，是&quot;客户在决定装修时第一个想到谁&quot;。要盯两件事：兔宝宝 4 万家地方家具厂的产能整合会不会变成价格屠夫；贝壳整装的口碑一旦稳住，中端定制会被系统性抽走。</span></div>
+            
+            
+        </div>
+
+        <!-- 实木 -->
+        <div class="category-title">
+            <span>🌳 实木</span>
+            <span class="en">Solid Wood</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">3</div>
+                <div class="news-title">原木主力收 800.5 元/m³，本周 13 港预计到船 11 条环比减 8%、到港 39.8 万方</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">瑞达期货晨会纪要</span><span>2026-10-27</span></div>
+            <div class="news-summary">瑞达期货 10 月 27 日晨会纪要显示：原木主力合约收跌至 800.5 元/m³；现货端辐射松原木山东地区报价 830 元/m³、持平，江苏地区 810 元/m³，进口 CFR 报价 132 美元/m³、持平。供给端，据木联调研，本周（10 月 26 日—11 月 1 日）13 港新西兰针叶原木预计到船 11 条、较上周减少 1 条、周环比减少 8%，到港总量约 39.8 万方、较上周减少 5.1 万方、周环比减少 11%；上周（10 月 19—25 日）实际到船 12 条，较上上周增加 3 条、周环比增加 33%。海关总署数据：2026 年 9 月中国进口针叶原木 221.6 万立方米，环比上升 12.28%、同比上升 10.73%。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">期货 800.5 元已经低于江苏现货 810 元，出现轻微倒挂——这说明盘面在交易&quot;未来更弱&quot;，而不是当下的紧张。到船量上周 +33%、本周 -8%，这种反复说明船期在被人为调节（滞港、拼船），不是需求驱动。对采购的含义：现阶段的低价窗口是贸易商在出货，不是趋势反转，按单锁量、别赌方向。要盯 11 月 CFR 报价，如果外盘继续稳在 132 美元而国内跌破 800，进口商就要开始亏了。</span></div>
+            
+            <a class="read-more" href="https://www.rdqh.com/content/show/61/206451" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">4</div>
+                <div class="news-title">针叶原木港口库存降至 225 万方周减 3.85%，江苏日出库 2.12 万方降 17.51%</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">木联调研 / 同花顺期货通</span><span>2026-10-27</span></div>
+            <div class="news-summary">据木联调研，截至 10 月 23 日，国内针叶原木总库存为 225 万方、较上周减少 9 万方、周环比减少 3.85%；其中辐射松库存 160 万方、较上周减少 10 万方、周环比减少 5.88%；北美材库存 43 万方、较上周增加 3 万方、周环比增加 7.50%；云杉/冷杉库存 10 万方、较上周减少 3 万方。需求端，10 月 19 日—25 日中国 7 省 13 港针叶原木日均出库量 6.78 万方、较上周减少 2.45%，其中山东港口日均出库 3.96 万方、较上周增加 2.59%，江苏港口日均出库 2.12 万方、较上周减少 17.51%。此外 10 月 CFR 报价上涨 2 美元至 132 美元，外商下调意愿低，11 月报价或持稳续涨；北方到港偏少、库存偏紧，山东部分规格小涨。另据木业信息网 10 月 27 日报价，柚木板材 1.4 万—2.9 万元/立方米、柚木原木 1.3 万—2.1 万元/立方米。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">库存降、出库也降，这是&quot;两端同时缩&quot;的典型信号——不是需求好到把库存吃掉，是加工厂不敢进料、贸易商不敢压货。地域分化更值得看：山东出库 +2.59%、江苏 -17.51%，江苏那边正是受封航影响的区域，说明区域的量在往山东转移。要盯江苏复航后的补库节奏，那是判断这轮去库是&quot;真空&quot;还是&quot;真需&quot;的唯一窗口。</span></div>
+            
+            <a class="read-more" href="https://goodsfu.10jqka.com.cn/20261027/c681120076.shtml" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 大店 -->
+        <div class="category-title">
+            <span>🏬 大店</span>
+            <span class="en">Big-Store Model</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">5</div>
+                <div class="news-title">烟台三家欧派门店相继关停，涉事资金约 600 万元、维权群已接龙 100 多人</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">烟台广播电视台</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月 27 日，烟台广播电视台《社会广角》追踪报道：除芝罘富尔玛欧派店外，开发区永旺欧派店、芝罘红星美凯龙欧派店也已相继关停，涉及员工欠薪与客户款项，资金总额在 600 万元左右。有消费者今年 6 月订购全屋定制柜并交纳全款 39500 元，合同约定 9 月 6 日前送货安装，至今未交付；另有客户交款 4 万余元，门店负责人曾在 10 月 15 日写下保证书承诺 11 月 14 日前安装完毕。客户自建维权群目前接龙 100 多人，涉及总金额 500 多万元，其中单笔最高 46.8 万元（含基础装修与全屋定制）。客户签约主体为烟台峦庭春晓装修设计有限公司，成立于 2024 年 11 月、注册资本 100 万元、实缴出资额 0 元。欧派全国客服回应：退款只能向经销商主张权利，总部未收到款项。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这次比单店跑路更严重——三家店同时关停、600 万规模，说明不是个别经销商经营不善，而是同一实控人在多个卖场铺店后集体失血。最刺眼的是签约主体&quot;注册资本 100 万、实缴 0 元&quot;：一个实缴为零的公司，能收走客户几十万全款、在三个主流卖场拿位置，说明品牌方的准入和资金监管几乎是空的。要盯两件事：一是欧派会不会被迫推出预付款监管或总部兜底（这会变成全行业的成本），二是其他品牌在烟台的同类风险排查。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7701148226296070697" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">6</div>
+                <div class="news-title">家居渠道集体下沉：圣象&quot;象往家&quot;签约 41 家社区店，三棵树 30 家社区店 9 月北京开业</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">北京商报</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月 27 日，北京商报报道家居品牌集体加码社区店：圣象集团推出局改焕新专属品牌&quot;象往家&quot;，以社区小店模式深耕旧房轻改造，目前全国已签约 41 家门店，覆盖北京、上海、深圳、广州等一二线城市；今年 9 月三棵树&quot;马上住&quot;30 家社区店在北京开业，提供墙面焕新、防水修缮、厨卫局改、瓷砖美缝等服务，主打&quot;8 小时净味住新家&quot;；经历重整的东易日盛把渠道重心从&quot;大店&quot;转向&quot;社区小店&quot;，5 月发布局装局改品牌&quot;晶鲤焕新家&quot;，以空间焕新、精装升级、局装局改、全案整装四大业务为核心；宜家 2026 年以来在北京通州湾里·王府井、朝阳龙湖·长楹天街的小型门店相继开业，与现有门店及线上渠道形成互补。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这轮社区店热的本质不是&quot;开店更便宜&quot;，而是&quot;客户不再专程来&quot;。大店模式要客户跑一趟，社区店是把店开到客户下楼的地方，决策链路从&quot;计划装修&quot;提前到&quot;路过看见&quot;。但社区店真正的门槛在履约：8 小时净味、局改 3 天完工这类承诺，靠的是本地化的工人和供应链，开店容易、交付难。要盯单店模型——如果一家社区店年营收做不到 300 万，租金加人力是撑不住的，这波扩张会退潮。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7701348352281051683" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 外贸出海 -->
+        <div class="category-title">
+            <span>🚢 外贸出海</span>
+            <span class="en">Export &amp; Overseas</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">7</div>
+                <div class="news-title">欧盟拟明年一季度推出贸易措施限制中国家具等进口，外交部回应&quot;避免滥用贸易救济工具&quot;</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">外交部例行记者会（北京青年报）</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月 27 日，外交部发言人郭嘉昆主持例行记者会。有记者提问：从知情人士处获悉，欧盟计划采取贸易措施，减少从中国进口化工产品、家具和机械等产品，该措施可能在明年一季度推出。郭嘉昆表示，中方始终认为中欧关系的本质是伙伴，中欧经贸关系的底色是互利共赢；近期中欧贸易投资磋商机制第二次例会取得积极进展，说明双方完全可以通过对话协商妥善解决经贸分歧；希望欧方尊重市场经济和公平竞争原则，避免滥用贸易救济工具，以实际行动推动中欧关系健康稳定发展。此前商务部数据显示，1—9 月家具及其零件出口 3456.9 亿元、同比增长 2.2%，欧盟是仅次于美国的第二大市场。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这条要当成预警而不是新闻看：一旦落地，冲击面比美国双反更大——欧盟是家居出口的第二大市场，而且这次是一揽子覆盖化工、家具、机械，等于从原料到成品同时抬门槛。企业现在能做的只有两件事：一是把对欧订单的交付节点尽量前置到明年一季度之前，二是提前评估东南亚产能的转口可行性（但要注意原产地规则正在收紧）。要盯 11 月中欧磋商的进展，那是判断会不会真的落地的唯一信号。</span></div>
+            
+            <a class="read-more" href="https://news.qq.com/rain/a/20261027A099I100" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">8</div>
+                <div class="news-title">广交会二期闭幕：佛山前三季度出口家具 154.2 亿元增 13.2%，粤企从单品转向全链条出海</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">新快报 / 海关总署广东分署</span><span>2026-10-27</span></div>
+            <div class="news-summary">第 140 届广交会二期 10 月 27 日闭幕。二期聚焦&quot;品质家居&quot;，约 1.1 万家企业参展、展出 237.6 万件产品，新产品、绿色产品、自主知识产权产品占比分别达 24.2%、26.9%、25.0%。海关总署广东分署数据显示，前三季度广东对 APEC 其他成员经济体进出口 5.74 万亿元、增长 26.4%，其中佛山前三季度出口家具 154.2 亿元、增长 13.2%。出海方式正在变：广东新品爱家居把定制柜类扩展到室内门，追求门柜同色，海外覆盖澳大利亚、北美、东南亚和中东，并在印尼、沙特设海外工厂、研发与核心制造留在肇庆，形成&quot;国内研发制造 + 海外本地化生产&quot;双向格局；佛山敬城信息科技则把整个装修打包出口，瓷砖、灯饰、衣柜、橱柜、大理石、门窗一次配齐，走全球门到门物流。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">佛山 13.2% 的增速是全国 2.2% 的六倍，说明出口增量高度集中在有产业带、有海外产能的企业身上，不是普惠式回暖。&quot;研发制造留国内 + 产能放海外&quot;这个组合值得抄：它既规避了关税，又保住了工艺和利润最厚的那一段。要盯印尼、沙特这两个基地的成本能不能压到接近国内——如果压不住，这种模式只适合高客单产品线。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7701392246486073865/" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 智能家居 -->
+        <div class="category-title">
+            <span>📱 智能家居</span>
+            <span class="en">Smart Home</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">9</div>
+                <div class="news-title">白电三季报分化：美的净利预增 20%+、格力单季跌 43.31%、海信家电单季跌 74%</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">白电三季报综述（公众号·家居锋向标系）</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月底白电三季报陆续披露，分化极大。格力三季度营收 366.78 亿元、同比下降 7.97%，前三季度营收 1260.75 亿元、降 8.10%；单季归母净利润 39.96 亿元、同比暴跌 43.31%，前三季度 172.74 亿元、下降 19.51%，公司解释为消费电器业务下降叠加原材料价格高企，坚持&quot;卷品质不卷价格&quot;导致成本无法向售价传导。海信家电前三季度营收 670.14 亿元、降 6.32%，归母净利润 18.49 亿元、降 34.23%；单季营收 202.48 亿元、降 8.76%，归母净利润仅 1.91 亿元、同比暴跌 74%，扣非净利降 96.73%，单季毛利率 18.25%、同比降 1.95 个百分点。美的上半年营收 2610.52 亿元、增 3.46%，归母净利润 264.46 亿元、增 1.66%，三季度归母净利预计增长 20% 以上，但其中含所持长鑫科技上市带来的百亿级公允价值变动收益。海尔智家上半年营收 1521.15 亿元、降 2.80%，归母净利润 103.16 亿元、降 14.27%。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">&quot;国补退坡&quot;这个共同理由解释不了 -43% 和 +20% 的差距，真正的分水岭是有没有第二条腿。格力的腿只有空调（占营收八成以上），守价就丢利润；美的的腿是早年押注半导体，长鑫上市一次性贡献百亿账面收益，把主业承压盖住了。对家居的启示很直接：单一品类的品牌在下行期毫无缓冲，多元化不是为了增长，是为了活命。要盯美的剔除投资收益后的主业利润——那才是它真实的体温。</span></div>
+            
+            
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">10</div>
+                <div class="news-title">西北首座 MEGA-E 智电绿洲落地兰州：1.3 万平方米、67 个家电品牌、全国第六座</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">新浪网</span><span>2026-10-27</span></div>
+            <div class="news-summary">集智能家电、全屋体验与便民服务于一体的大型智电消费综合体近日在兰州揭幕，落户红星美凯龙甘肃全球家居 1 号店，是西北地区首座、全国第六座 MEGA-E 智电绿洲。该体验空间总面积达 1.3 万平方米，汇集 67 个家电品牌，包含多家区域首店与旗舰店，覆盖厨电、全屋智能、生活潮电等细分领域。项目在西北首次完整呈现&quot;4+1&quot;创新体验体系：通过潮电荟、影音汇、美厨、Ecolife 四大开放式场景，打破传统卖场按品牌分区的模式，让消费者围绕真实居家需求进行对比体验；配套建成的用户服务中心集咨询、维修、上门服务、会员沙龙等功能于一体，把服务延伸到社区。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">&quot;按品牌分区&quot;改成&quot;按场景分区&quot;，这一步看着是陈列调整，实质是把卖场的收入逻辑从&quot;收品牌租金&quot;改成&quot;收客户停留时长&quot;——场景化能让客单价上去，但也意味着品牌方的话语权下降。1.3 万㎡、67 个品牌，密度远低于传统家电卖场，说明它在赌体验溢价而不是品类齐全。要盯这个店的坪效能不能超过传统卖场，如果能，红星美凯龙会大规模复制，那对家居卖场的招商结构是颠覆性的。</span></div>
+            
+            <a class="read-more" href="https://k.sina.com.cn/article_2090512390_7c9ab00602003jj6w.html" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 家居场景设计 -->
+        <div class="category-title">
+            <span>🎨 家居场景设计</span>
+            <span class="en">Home Scenes &amp; Design</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">11</div>
+                <div class="news-title">美的设计家联合 30 家设计机构发布装修趋势白皮书：86.3% 家庭把空气质量列为装修首要健康因素</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">中国经济新闻网</span><span>2026-10-27</span></div>
+            <div class="news-summary">美的设计家联合 30 家一线室内设计机构发布《好房子，从好空气开始！2026 装修趋势白皮书》，基于 3000 份消费者调研与 120 个真实住宅案例，提炼出三大趋势。数据层面：86.3% 的受访家庭将室内空气质量列为装修中最关注的健康因素；76.8% 的受访者介意中央空调对层高的影响，极简风格项目中对&quot;内机厚度≤200mm&quot;的需求率达 91.5%；91.2% 将制冷制热列为第一基础条件，76.3% 将健康舒适列为核心升级诉求，82.1% 表示愿意为健康空气支付溢价、但前提是不牺牲基础性能；三代同堂家庭中 81.4% 存在成员间温度偏好冲突。产品端，设计家把内机厚度压到 200mm、吊顶可少下探 50—100mm，双出风内机 45° 贴地送风、头足温差 1.4℃，制冷 14 米远送风、全屋温差小于 1℃。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">这份白皮书真正的价值是把&quot;空气&quot;从一个设备参数变成了设计对象——86.3% 关注空气质量、91.5% 要求内机≤200mm，说明客户要的是&quot;看不见但感觉得到&quot;的东西，这恰恰是设计师能卖钱的部分。对做整装和定制的启示：空调、新风、净水这些&quot;隐蔽工程&quot;如果还当成主材清单里的一行，就浪费了它作为设计卖点的价值。要盯这个&quot;200mm 内机&quot;会不会成为行业标准线，一旦成为标准，超薄机型就是硬门槛。</span></div>
+            
+            <a class="read-more" href="https://www.cet.com.cn/zhpd/zxsdv2/10633670.shtml" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">12</div>
+                <div class="news-title">武汉智能建造博览会开幕：AI 3 分钟生成完整设计与报价，墙体可移动实现空间可变</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">九派新闻 / 千家网</span><span>2026-10-27</span></div>
+            <div class="news-summary">10 月 27 日，2026 国际（武汉）智能建造产业博览会在光谷科技会展中心开幕，200 余家产业链展商参展。中建壹品展示的&quot;壹品定制家&quot;AI 设计软件，导入房间平面图后选择居住人数、小区、户型、家装风格，一键生成 3D 效果，前后操作 3 分钟内即可自动生成完整设计方案，并可一键生成包含主材、软装在内的报价清单。空间形态上，其&quot;阔空间&quot;产品以全预制钢密肋组合楼板为核心支撑，在楼板下加装滑轨，墙体可自由移动，屋内空间能灵活变形；依托工业化模块、工厂预制、现场&quot;搭积木&quot;式拼接，建筑集成度达 80%、精度实现毫米级，从源头规避墙体开裂、地板漏水等质量通病，并研发数百种收纳模块适配小户型。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">&quot;3 分钟出方案 + 报价&quot;这件事对定制行业的冲击远大于它对建筑业的意义：现在定制门店最大的效率损耗就是量尺到出图的三五天，如果 AI 能把这个环节压到 3 分钟，导购就能在客户坐下的那杯茶时间里完成方案和报价，成交率会显著变化。而&quot;墙体可移动&quot;解决的是存量房改造里最难的那一步——不用砸墙。要盯这套 AI 设计工具会不会对第三方开放，一旦开放，中小定制品牌的出图能力会被瞬间拉平。</span></div>
+            
+            <a class="read-more" href="https://www.toutiao.com/article/7701281967845605931/" rel="noopener noreferrer">阅读原文</a>
+        </div>
+
+        <!-- 家居老牌企业转型 -->
+        <div class="category-title">
+            <span>🔄 家居老牌企业转型</span>
+            <span class="en">Legacy Players in Transition</span>
+        </div>
+        
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">13</div>
+                <div class="news-title">丝涟永久关闭北卡总部工厂、裁员 114 人，产能转至马里兰与佐治亚两厂</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">泛家居行业媒体（公众号，原文日期未标注）</span><span>2026-10-27</span></div>
+            <div class="news-summary">泰普尔丝涟集团旗下床垫品牌丝涟宣布，将永久关闭位于北卡罗来纳州特里尼蒂总部园区内的生产工厂，本次调整将裁员 114 名员工，生产业务预计在 2026 年 12 月 31 日前全部收尾，相关信息已提交至北卡州商务部门备案。本次关停的是总部地块内的床垫生产车间，丝涟、Stearns &amp; Foster 品牌床垫及床架产品产能将转移至马里兰州黑格斯敦、佐治亚州科尼尔斯两座现有工厂，以此优化北美生产网络、降低综合制造成本。值得注意的是，丝涟并不会完全撤出该基地：生产车间关停后，总部园区将保留并扩大研发、产品测试、行政、展厅等职能。对受影响员工，企业将提供补偿金与就业安置协助，内部优先推荐集团其他岗位，并举办专场招聘会。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">关厂但保留研发和展厅、把产能集中到两座效率更高的厂——这是头部寝具在北美的标准动作：制造端只留最低成本点位，其余全部收进研发和品牌。值得对照的是国内：我们很多企业还在&quot;每省一个厂&quot;的分散布局，产能利用率低、成本摊不薄。要盯泰普尔丝涟这轮整合后的毛利率变化，如果提升明显，国内头部大概率会跟进一轮关厂合并，那会带来区域产能的重新洗牌。</span></div>
+            
+            
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <div class="number-badge">14</div>
+                <div class="news-title">万华化学前三季净利 156.58 亿元增 70.99%，万华生态以&quot;48 小时厨卫焕新&quot;切入整装交付</div>
+            </div>
+            <div class="news-meta"><span class="source-tag">家居锋向标（公众号）</span><span>2026-10-26</span></div>
+            <div class="news-summary">10 月 26 日，万华化学披露三季报：前三季度营业收入 1858.67 亿元、同比增长 28.87%，归母净利润 156.58 亿元、同比增长 70.99%；第三季度归母净利润 55.95 亿元、同比增长 84.38%，当季毛利率 15.40%。利润增长的本质是价差修复：当季纯苯均价 8358 元/吨、同比上涨 41.54%，而聚合 MDI 均价约 17000 元/吨（2021 年均价 19989 元/吨）。与家居相关的是另一条战线：万华生态宣布从&quot;无醛板材供应商&quot;转向&quot;无醛整家交付服务商&quot;，把一套住宅拆解为四万余个部件、归入墙顶地、水电、整体厨卫、门窗、定制家具等十大模块，工厂预制、现场装配；山东菏泽、驻马店、信阳三地基地年产能达 30 万套家装部品、50 万套整体卫生间、30 万套整体厨房，规划 8 个生产基地、300 个城市交付中心、每个中心辐射 1000 家社区门店。主打&quot;48 小时厨卫焕新&quot;：整体卫浴 2 名工人 4 小时装完、整体厨房 2 名工人 8 小时装完，而传统湿法作业装一个卫生间通常需 14 天；据其测算可减少基础装修用材 77%、建筑垃圾 90%。</div>
+            
+            <div class="insight-box"><span class="insight-label">💡 有屋启示：</span><span class="insight-text">上游材料商开始亲自做交付，这是这一年最值得警惕的结构性变化。万华生态的算盘很清楚：板材只是入口，真正吃掉的是装修公司的那一段利润，而且每交付一套整装，MDI 用量就多一份。48 小时对 14 天不是效率优化，是把湿法作业整套工艺替掉——一旦跑通，被替代的不只是某家公司，而是&quot;现场砌砖贴砖&quot;这种组织方式。要盯三个数：300 个交付中心的落地节奏、单套成本与传统湿法的差距、以及有多少装企愿意接它的平台。</span></div>
+            
+            
+        </div>
+
+
+  <footer>
+    <p>© 2026 AI助手 · 行业日报 · 每日行业快报</p>
+    
+    <p>本期共 14 条 · 7 个板块（定制家居 / 实木 / 大店 / 外贸出海 / 智能家居 / 家居场景设计 / 家居老牌企业转型） · 生成于 2026/10/28 09:25:23</p>
+    
+    <p class="disclaimer">免责声明：本报告内容均来源于公开网络，仅供参考学习，不构成任何投资建议。文中观点仅代表作者个人立场，不代表本平台观点。如有版权问题，请联系删除。</p>
+  </footer>
+</div>
+</body>
+</html>
